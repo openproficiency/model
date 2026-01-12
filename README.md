@@ -9,6 +9,7 @@ Definitions include:
 - [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (Tutorials, projects, normal work, etc.)
 - [Topic List](specs/topic-list.md) - A list of topics provided by an issuer.
 - [Transcript Entry](specs/transcript-entry.md) - proficiency score for a single topic.
+- [Issuer](specs/issuer.md) - A verified entity that can provide a topic list and/or create transcript entries.
 
 ## Advantages
 

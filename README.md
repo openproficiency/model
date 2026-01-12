@@ -13,5 +13,5 @@ Definitions include:
 ## Advantages
 
 - **Verified** - All proficiency is signed by the issuer.
-- **Distributed** - All transcript records are independent of the issuer and learning source. 
+- **Distributed** - All transcript records are independent of the issuer and learning source.
 - **Never Repeat** - Knowledge topics and proficiency are transferrable. New courses on the same topics don't invalidate old courses.

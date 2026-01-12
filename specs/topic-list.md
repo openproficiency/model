@@ -41,17 +41,17 @@ A list may import topics from another list by declaring it as a dependency.
 - All direct and imported topics may be assigned proficiency scores.
 
 The below example illustrates importing the `thecorestandards` list, then assigns `tcs` as shorthand.
-It then creates an owned topic called `arithmatic-in-circuits` that uses topics from that list.
+It then creates an owned topic called `arithmetic-in-circuits` that uses topics from that list.
 
 ```mermaid
 flowchart BT
 
-  arithmatic-in-circuits[/"arithmatic-in-circuits"\]
+  arithmetic-in-circuits[/"arithmetic-in-circuits"\]
 
-    addition[/"tcs:addition"\] -.-x arithmatic-in-circuits
-    subtraction[/"tcs:subtraction"\] -.-x arithmatic-in-circuits
-    multiplication[/"tcs:multiplication"\] -.-x arithmatic-in-circuits
-    division[/"tcs:division"\] -.-x arithmatic-in-circuits
+    addition[/"tcs:addition"\] -.-x arithmetic-in-circuits
+    subtraction[/"tcs:subtraction"\] -.-x arithmetic-in-circuits
+    multiplication[/"tcs:multiplication"\] -.-x arithmetic-in-circuits
+    division[/"tcs:division"\] -.-x arithmetic-in-circuits
 
   %% Dependencies
   subgraph dependencies
@@ -72,11 +72,11 @@ The topic list can be shared as a simple `.csv` in a table format.
 | subtraction    | -                                               | numbers   |
 | multiplication | -                                               | numbers   |
 | division       | -                                               | numbers   |
-| arithmatic     | addition, subtraction, multiplication, division | -         |
+| arithmetic     | addition, subtraction, multiplication, division | -         |
 
 ### JSON
 
-The below example imports `thecorestandards` list. It uses the `numbers` topic to define arithmatic-related topics.
+The below example imports `thecorestandards` list. It uses the `numbers` topic to define arithmetic-related topics.
 
 <!-- prettier-ignore -->
 ```json
@@ -98,7 +98,7 @@ The below example imports `thecorestandards` list. It uses the `numbers` topic t
     "division": {
       "pretopics": ["tcs:numbers"]
     },
-    "arithmatic-in-circuits": {
+    "arithmetic-in-circuits": {
       "subtopics": [
         "addition",
         "subtraction",
@@ -115,7 +115,7 @@ The below example imports `thecorestandards` list. It uses the `numbers` topic t
 
 ### YAML
 
-The below example imports `thecorestandards` list. It uses the arithmatic-related topics from it instead of self-defining.
+The below example imports `thecorestandards` list. It uses the arithmetic-related topics from it instead of self-defining.
 
 ```yaml
 timestamp: "..."
@@ -123,7 +123,7 @@ issuer: "..."
 signature: "..."
 version: "..."
 topics:
-  arithmatic-in-circuits:
+  arithmetic-in-circuits:
     subtopics:
       - tcs:addition
       - tcs:subtraction

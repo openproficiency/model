@@ -32,7 +32,7 @@ All transcript entries are stored individually to enable selective sharing with 
 
 # Example
 
-Sam finished 2 modules in a course named 'Basic Arithmatic'. 2 transcript entries were created:
+Sam finished 2 modules in a course named 'Basic Arithmetic'. 2 transcript entries were created:
 
 ```json
 {
@@ -57,4 +57,4 @@ Sam finished 2 modules in a course named 'Basic Arithmatic'. 2 transcript entrie
 ```
 
 > [!NOTE]
-The above is just an example of fields. No specific format is defined.
+> The above is just an example of fields. No specific format is defined.

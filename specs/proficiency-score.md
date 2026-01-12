@@ -27,12 +27,12 @@ A topic calculates its score from its subtopics. It is the normalized sum of the
 
 ```mermaid
 flowchart BT
-arithmatic[/0.625<br/>arithmatic\]
+arithmetic[/0.625<br/>arithmetic\]
 
-addition[/"1.0<br/>addition"\] --> arithmatic
-subtraction[/1.0<br/>subtraction\] --> arithmatic
-multiplication[/0.5<br/>multiplication\] --> arithmatic
-division[/0.0<br/>division\] --> arithmatic
+addition[/"1.0<br/>addition"\] --> arithmetic
+subtraction[/1.0<br/>subtraction\] --> arithmetic
+multiplication[/0.5<br/>multiplication\] --> arithmetic
+division[/0.0<br/>division\] --> arithmetic
 ```
 
 Explanation:
@@ -45,19 +45,19 @@ Assigning a score to a group topic affects all of its subtopics equally. It does
 
 ```mermaid
 flowchart BT
-arithmatic[/0.8<br/>arithmatic\]
+arithmetic[/0.8<br/>arithmetic\]
 
-addition[/"0.8<br/>addition"\] --> arithmatic
-subtraction[/0.8<br/>subtraction\] --> arithmatic
-multiplication[/0.8<br/>multiplication\] --> arithmatic
-division[/0.8<br/>division\] --> arithmatic
+addition[/"0.8<br/>addition"\] --> arithmetic
+subtraction[/0.8<br/>subtraction\] --> arithmetic
+multiplication[/0.8<br/>multiplication\] --> arithmetic
+division[/0.8<br/>division\] --> arithmetic
 
 numbers[/1.0<br/>numbers\] -.-x addition
 ```
 
 # Explicit Scoring
 
-Explicit scoring can be helpful for getting started. In the beginning, it may be burdensome or impossible to confidently define the topics and relationships via  subtopics/pretopics.
+Explicit scoring can be helpful for getting started. In the beginning, it may be burdensome or impossible to confidently define the topics and relationships via subtopics/pretopics.
 
 In this case, a topic can be internally organized into phases. As each phase is completed the proficiency score is increased.
 
@@ -76,7 +76,7 @@ subgraph prereq["Prerequisites"]
   numbers1[/Numerals\]
 end
 
-subgraph arithmatic["Topic: Arithmatic"]
+subgraph arithmetic["Topic: arithmetic"]
   direction BT
 
   subgraph level1["Phase 1, Score: 0.5"]
@@ -95,5 +95,5 @@ subgraph arithmatic["Topic: Arithmatic"]
   level2
 end
 
-prereq -.-x arithmatic
+prereq -.-x arithmetic
 ```

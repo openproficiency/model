@@ -15,7 +15,7 @@ A **Topic** is a defined unique area of knowledge.
 An **Atomic Topic** is a topic that is self-declared as a smallest knowledge domain.
 
 - **Good Examples**: `addition`, `subtraction`
-- **Bad Examples** `math`, `arithmatic`
+- **Bad Examples** `math`, `arithmetic`
 
 ```mermaid
 flowchart BT
@@ -32,7 +32,7 @@ A **Group Topic** is a topic with defined subtopics.
 ```mermaid
 flowchart BT
 
-topic[/arithmatic\]
+topic[/arithmetic\]
 subtopic1[/addition\] --> topic
 subtopic2[/subtraction\] --> topic
 ```
@@ -88,11 +88,11 @@ numbers[/"numbers"\]
   multiplication[/"multiplication"\]
   division[/"division"\]
 
-  arithmatic[/"arithmatic"\]
-  addition --> arithmatic
-  subtraction --> arithmatic
-  multiplication --> arithmatic
-  division --> arithmatic
+  arithmetic[/"arithmetic"\]
+  addition --> arithmetic
+  subtraction --> arithmetic
+  multiplication --> arithmetic
+  division --> arithmetic
 
   numbers -.-x addition
   numbers -.-x subtraction
@@ -106,8 +106,8 @@ numbers[/"numbers"\]
   expressions[/"expressions"\] --> algebra
   single-variable-eqs[/"single variable equations"\] --> algebra
 
-  arithmatic -.-x single-variable-eqs
-  arithmatic -.-x expressions
+  arithmetic -.-x single-variable-eqs
+  arithmetic -.-x expressions
 
 %% Abstraction 3
   math[/"math"\]
@@ -118,6 +118,6 @@ numbers[/"numbers"\]
 ### What does this graph say?
 
 - The `addition` topic requires understanding the `numbers` topic before beginning.
-- The `arithmatic` topic is understood if `addition`, `subtraction`, `multiplication`, and `division` are understood.
-- The `expressions` topic requires understanding the `arithmatic` topic before beginning.
+- The `arithmetic` topic is understood if `addition`, `subtraction`, `multiplication`, and `division` are understood.
+- The `expressions` topic requires understanding the `arithmetic` topic before beginning.
 - The `algebra` topic is 50% understood if the `variables` and `constants` topics are understood, but not the `expressions` and `single variable equations` topics.

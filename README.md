@@ -8,7 +8,7 @@ Definitions include:
 - [Proficiency Score](specs/proficiency-score.md) - a number indicating the degree of understanding for a specific topic.
 - [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (Tutorials, projects, normal work, etc.)
 - [Topic List](specs/topic-list.md) - A list of topics provided by an issuer.
-- [Transcript Entry](docs/transcript-entry.md) - proficiency score for a single topic.
+- [Transcript Entry](specs/transcript-entry.md) - proficiency score for a single topic.
 
 ## Advantages
 

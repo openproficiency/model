@@ -48,10 +48,10 @@ flowchart BT
 
   arithmatic-in-circuits[/"arithmatic-in-circuits"\]
 
-    addition[/"tcs:addition"\] -.-x arithmatic-in-coding
-    subtraction[/"tcs:subtraction"\] -.-x arithmatic-in-coding
-    multiplication[/"tcs:multiplication"\] -.-x arithmatic-in-coding
-    division[/"tcs:division"\] -.-x arithmatic-in-coding
+    addition[/"tcs:addition"\] -.-x arithmatic-in-circuits
+    subtraction[/"tcs:subtraction"\] -.-x arithmatic-in-circuits
+    multiplication[/"tcs:multiplication"\] -.-x arithmatic-in-circuits
+    division[/"tcs:division"\] -.-x arithmatic-in-circuits
 
   %% Dependencies
   subgraph dependencies

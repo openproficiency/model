@@ -8,3 +8,9 @@ Definitions include:
 - [Proficiency Score](specs/proficiency-score.md) - a number indicating the degree of understanding for a specific topic.
 - [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (Tutorials, projects, normal work, etc.)
 - [Transcript Entry](docs/transcript-entry.md) - proficiency score for a single topic.
+
+## Advantages
+
+- **Verified** - All proficiency is signed by the issuer.
+- **Distributed** - All transcript records are independent of the issuer and learning source. 
+- **Never Repeat** - Knowledge topics and proficiency are transferrable. New courses on the same topics don't invalidate old courses.

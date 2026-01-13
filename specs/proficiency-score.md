@@ -39,6 +39,9 @@ Explanation:
 
 `0.55` = (`0.8` + `0.8` + `0.5` + `0.1`) / 4
 
+> [!NOTE]
+> In any single topic, there is likely an implied order. Since the subtopic space is small, it is an acceptable tradeoff easier organization. Alternately, a hyper-specific topic stucture could be created, if required. Example: It would probably be very helpful to understand `addition` before learning `multiplication`.
+
 ## Downward Score Propagation
 
 Assigning a score to a group topic affects all of its subtopics equally.
@@ -56,6 +59,10 @@ division[/0.8<br/>division\] --> arithmetic
 
 numbers[/1.0<br/>numbers\] -.-x addition
 ```
+
+> [!NOTE]
+> Theoeretically, proficiency should propogate to pre-topics.
+> This is a limitation that is being investigated. Idea: have a binary flag to allow propogation to pretopics.
 
 # Explicit Scoring
 

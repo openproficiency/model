@@ -12,10 +12,10 @@ A **Proficiency Score** is a number indicating the degree of understanding for a
 Some topics can be simple and hence obtain proficiency by familiary and basic usage.
 
 - `0.0`: Unaware - Does not know of the topic's existance.
-- `0.1`: Aware - No knowledge of the topic.
+- `0.1`: Aware - Ability to recognize the topic.
 - `0.5`: Familiar - Theoretical understanding.
 - `0.8`: Applied - Has practically used the knowledge.
-  - Minimumum threshold for use as a [pretopic](experience-topic.md).
+  - Minimum threshold for use as a [pretopic](experience-topic.md).
 - `1.0`: Proficient - Used enough to consider "fundamental".
 
 > [!IMPORTANT]
@@ -27,12 +27,12 @@ A topic calculates its score from its subtopics. It is the normalized sum of the
 
 ```mermaid
 flowchart BT
-arithmetic[/0.625<br/>arithmetic\]
+arithmetic[/0.55<br/>arithmetic\]
 
-addition[/"1.0<br/>addition"\] --> arithmetic
-subtraction[/1.0<br/>subtraction\] --> arithmetic
+addition[/"0.8<br/>addition"\] --> arithmetic
+subtraction[/0.8<br/>subtraction\] --> arithmetic
 multiplication[/0.5<br/>multiplication\] --> arithmetic
-division[/0.0<br/>division\] --> arithmetic
+division[/0.1<br/>division\] --> arithmetic
 ```
 
 Explanation:
@@ -41,7 +41,9 @@ Explanation:
 
 ## Downward Score Propagation
 
-Assigning a score to a group topic affects all of its subtopics equally. It does not affect any pretopics.
+Assigning a score to a group topic affects all of its subtopics equally.
+
+- Propagation does not affect **pretopics**.
 
 ```mermaid
 flowchart BT

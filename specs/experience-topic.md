@@ -1,14 +1,12 @@
 # Experience Topic
 
-A **Topic** is a defined unique area of knowledge.
+A **Topic** is a defined unique area of knowledge and combined together to form a [topic list](topic-list.md).
 
 - Topics are the fundamental building blocks for defining relationships between different units of knowledge.
 - A topic should as specific as possible to avoid overlapping knowledge domains. (i.e. specific, clear, unambiguous).
-- All topics are equal, however they are referred as different types depending on their relationship to other topics.
+- All topics have the same significance. There is no predetermined hierarchy.
+- A topic is referred to differently depending on its relationship to another other topic.
 
-### Proficiency
-
-- A [user](user.md) may be assigned a [proficiency](experience-level.md) level for a particular topic.
 
 ## Types of Topics
 

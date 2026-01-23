@@ -74,14 +74,14 @@ dependencies:
     math-teacher-senior{{"Senior Math Teacher<br/>"}}
   end
 
-  basic-math --> math-teacher-junior
-  classroom-management --> math-teacher-junior
+  basic-math -.-x math-teacher-junior
+  classroom-management -.-x math-teacher-junior
 
-  lesson-planning --> math-teacher
-  lesson-customization --> math-teacher
+  lesson-planning -.-x math-teacher
+  lesson-customization -.-x math-teacher
 
-  teacher-mentoring --> math-teacher-senior
-  curriculum-development --> math-teacher-senior
+  teacher-mentoring -.-x math-teacher-senior
+  curriculum-development -.-x math-teacher-senior
 ```
 
 > [!NOTE]
@@ -109,14 +109,14 @@ flowchart BT
       plvl_3{{"Arithmetic<br/>✨ Level 3"}}
    end
 
-   t_addition --> plvl_1
-   t_subtraction --> plvl_1
+   t_addition -.-x plvl_1
+   t_subtraction -.-x plvl_1
 
-   t_multiplication --> plvl_2
-   t_division --> plvl_2
+   t_multiplication -.-x plvl_2
+   t_division -.-x plvl_2
 
-   t_exponents --> plvl_3
-   t_roots --> plvl_3
+   t_exponents -.-x plvl_3
+   t_roots -.-x plvl_3
 ```
 
 > [!NOTE]
@@ -145,12 +145,12 @@ flowchart BT
       plvl_advanced{{"Arithmetic<br/>✨ Advanced"}}
    end
 
-   t_addition --> plvl_beginner
-   t_subtraction --> plvl_beginner
+   t_addition -.-x plvl_beginner
+   t_subtraction -.-x plvl_beginner
 
-   t_multiplication --> plvl_intermediate
-   t_division --> plvl_intermediate
+   t_multiplication -.-x plvl_intermediate
+   t_division -.-x plvl_intermediate
 
-   t_exponents --> plvl_advanced
-   t_roots --> plvl_advanced
+   t_exponents -.-x plvl_advanced
+   t_roots -.-x plvl_advanced
 ```

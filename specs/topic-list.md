@@ -49,12 +49,12 @@ This enables:
 
 A list may import topics from another list by declaring it as a dependency.
 
-- A dependency is indicated using a colon `:`.
-- Dependencies may be used in full name or assigned a shorthand reference.
 - Imported topics may only be used as pretopics.
+- The dependency source is provided as a full URL, including version. Example `https://thecorestandards.com/topiclists/math.json@0.1.0`
+- Dependencies are assigned a local namespace and referenced using `.` notation.
 - All direct and imported topics may be assigned proficiency scores.
 
-The below example illustrates importing the `thecorestandards` list, then assigns `tcs` as shorthand.
+The below example illustrates importing the `thecorestandards/math` list, and assigning it the local `tcs-math` namespace.
 It then creates an owned topic called `arithmetic-in-circuits` that uses topics from that list.
 
 ```mermaid
@@ -62,87 +62,101 @@ flowchart BT
 
   arithmetic-in-circuits[/"arithmetic-in-circuits"\]
 
-    addition[/"tcs:addition"\] -.-x arithmetic-in-circuits
-    subtraction[/"tcs:subtraction"\] -.-x arithmetic-in-circuits
-    multiplication[/"tcs:multiplication"\] -.-x arithmetic-in-circuits
-    division[/"tcs:division"\] -.-x arithmetic-in-circuits
+    addition[/"tcs-math.addition"\] -.-x arithmetic-in-circuits
+    subtraction[/"tcs-math.subtraction"\] -.-x arithmetic-in-circuits
+    multiplication[/"tcs-math.multiplication"\] -.-x arithmetic-in-circuits
+    division[/"tcs-math.division"\] -.-x arithmetic-in-circuits
 
   %% Dependencies
   subgraph dependencies
-    thecorestandards@{ shape: docs, label: "tcs<br/>thecorestandards" }
+    tcs-math@{ shape: docs, label: "tcs-math<br/>thecorestandards/math@0.1.0" }
   end
 ```
 
 # Examples
 
-### Simple table
-
-The topic list can be shared as a simple `.csv` in a table format.
-
-| topic          | subtopics                                       | pretopics |
-| -------------- | ----------------------------------------------- | --------- |
-| numbers        | -                                               | -         |
-| addition       | -                                               | numbers   |
-| subtraction    | -                                               | numbers   |
-| multiplication | -                                               | numbers   |
-| division       | -                                               | numbers   |
-| arithmetic     | addition, subtraction, multiplication, division | -         |
-
 ### JSON
 
-The below example imports `thecorestandards` list. It uses the `numbers` topic to define arithmetic-related topics.
+The below example imports `thecorestandards/math` list.
+It defines several prerequisites from common math for understanding binary math.
 
 <!-- prettier-ignore -->
 ```json
 {
-  "issuer": "...",
-  "signature": "...",
+  "name": "binary-math",
+  "description": "...",
   "version": "...",
+  "issuer": "...",
+  "certificate": "...",
   "timestamp": "...",
   "topics": {
-    "addition": {
-      "pretopics": ["tcs:numbers"]
+    "binary-addition": {
+      "description": "...",
+      "pretopics": ["tcs-math.addition"]
     },
-    "subtraction": {
-      "pretopics": ["tcs:numbers"]
+    "binary-subtraction": {
+      "description": "...",
+      "pretopics": ["tcs-math.subtraction"]
     },
-    "multiplication": {
-      "pretopics": ["tcs:numbers"]
+    "binary-multiplication": {
+      "description": "...",
+      "pretopics": ["tcs-math.multiplication"]
     },
-    "division": {
-      "pretopics": ["tcs:numbers"]
+    "binary-division": {
+      "description": "...",
+      "pretopics": ["tcs-math.division"]
     },
-    "arithmetic-in-circuits": {
+    "binary-arithmetic": {
+      "description": "Application of electrical circuits to perform basic math operations.",
       "subtopics": [
-        "addition",
-        "subtraction",
-        "multiplication",
-        "division"
+        "binary-addition",
+        "binary-subtraction",
+        "binary-multiplication",
+        "binary-division"
       ]
     }
   },
   "dependencies": {
-    "tcs": "thecorestandards"
+    "tcs-math": "https://thecorestandards.com/topics-lists/math.json@0.1.0"
   }
 }
 ```
 
 ### YAML
 
-The below example imports `thecorestandards` list. It uses the arithmetic-related topics from it instead of self-defining.
+The below example imports the `math` list. It uses the arithmetic-related topics from it instead of self-defining.
 
 ```yaml
-timestamp: "..."
+name: "binary-math"
+description: "..."
 issuer: "..."
-signature: "..."
 version: "..."
+certificate: "..."
+timestamp: "..."
 topics:
-  arithmetic-in-circuits:
+  binary-addition:
+    description: ...
+    pretopics:
+      - tcs-math.addition
+  binary-subtraction:
+    description: ...
+    pretopics:
+      - tcs-math.subtraction
+  binary-multiplication:
+    description: ...
+    pretopics:
+      - tcs-math.multiplication
+  binary-division:
+    description: ...
+    pretopics:
+      - tcs-math.division
+  binary-arithmetic:
+    description: Application of electrical circuits to perform basic math operations.
     subtopics:
-      - tcs:addition
-      - tcs:subtraction
-      - tcs:multiplication
-      - tcs:division
+      - binary-addition
+      - binary-subtraction
+      - binary-multiplication
+      - binary-division
 dependencies:
-  tcs: thecorestandards
+  tcs-math: https://thecorestandards.com/topics-lists/math.json@0.1.0
 ```

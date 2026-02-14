@@ -21,7 +21,7 @@ An **Issuer** is an entity with credibility in a particular knowledge domain.
 
 A company makes 3d printing machines.
 
-- They provide a [topic list](topic-list.md) covering many product features, common tasks, and even maintence procedures.
+- They provide a [topic list](topic-list.md) covering many product features, common tasks, and even maintenance procedures.
 - They provide "getting started" tutorials for logged-in users.
 - Users can download their transcript, for example to add to their private resume.
 

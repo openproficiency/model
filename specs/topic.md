@@ -1,9 +1,9 @@
-# Experience Topic
+# Topic
 
 A **Topic** is a defined unique area of knowledge and combined together to form a [topic list](topic-list.md).
 
 - Topics are the fundamental building blocks for defining relationships between different units of knowledge.
-- A topic should as specific as possible to avoid overlapping knowledge domains. (i.e. specific, clear, unambiguous).
+- A topic should be as specific as possible to avoid overlapping knowledge domains. (i.e. specific, clear, unambiguous).
 - All topics have the same significance. There is no predetermined hierarchy.
 - A topic is referred to differently depending on its relationship to another other topic.
 
@@ -64,7 +64,7 @@ pretopic -.-x topic2
 
 - Group topics enable the knowledge space to expand. For example:
 
-  - Grow Higher - Create a new topic by combining exsiting subtopics. This defines higher-order ability.
+  - Grow Higher - Create a new topic by combining existing subtopics. This defines higher-order ability.
   - Refactor - Replace a set of subtopics with a new group topic defined by the same subtopics.
   - Go Deeper - Create new topics then add them to an existing atomic topic, converting it into a group topic.
 

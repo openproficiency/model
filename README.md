@@ -4,7 +4,7 @@ The Open Proficiency Model (OPM) is an open definition for quantifying an indivi
 
 Definitions include:
 
-- [Experience Topic](specs/experience-topic.md) - a defined unique area of knowledge for gaining experience and becoming proficient.
+- [Topic](specs/topic.md) - a defined unique area of knowledge for gaining experience and becoming proficient.
 - [Proficiency Score](specs/proficiency-score.md) - a number indicating the degree of understanding for a specific topic.
 - [Proficiency Level](specs/proficiency-level.md) - A standardized interpretation for a collection of proficiency scores.
 - [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (Tutorials, projects, normal work, etc.)

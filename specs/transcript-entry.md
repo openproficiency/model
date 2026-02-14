@@ -1,6 +1,6 @@
 # Transcript Entry
 
-A **transcript entry** is a permanent record of a user's [proficiency score](proficiency-score.md) for a single [topic](experience-topic.md).
+A **transcript entry** is a permanent record of a user's [proficiency score](proficiency-score.md) for a single [topic](-topic.md).
 
 ## Required content
 

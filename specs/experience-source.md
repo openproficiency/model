@@ -1,6 +1,6 @@
 ## Experience Source
 
-An **Experience Source** is an activity that provides increased proficiency for one or more [experience topics](./experience-topic.md).
+An **Experience Source** is an activity that provides increased proficiency for one or more [topics](./topic.md).
 
 Examples:
 

@@ -1,6 +1,6 @@
 # Proficiency Score
 
-A **Proficiency Score** is a number indicating the degree of understanding for a specific [experience topic](experience-topic.md).
+A **Proficiency Score** is a number indicating the degree of understanding for a specific [topic](topic.md).
 
 - The score is between `0.0` and `1.0`:
   - A score of `0.0` indicates "No awareness" of the topic.
@@ -9,13 +9,13 @@ A **Proficiency Score** is a number indicating the degree of understanding for a
 
 ## Implicit Scoring (default)
 
-Some topics can be simple and hence obtain proficiency by familiary and basic usage.
+Some topics can be simple and hence obtain proficiency by familiarity and basic usage.
 
-- `0.0`: Unaware - Does not know of the topic's existance.
+- `0.0`: Unaware - Does not know of the topic's existence.
 - `0.1`: Aware - Ability to recognize the topic.
 - `0.5`: Familiar - Theoretical understanding.
 - `0.8`: Applied - Has practically used the knowledge.
-  - Minimum threshold for use as a [pretopic](experience-topic.md).
+  - Minimum threshold for use as a [pretopic](topic.md#types-of-topics).
 - `1.0`: Proficient - Used enough to consider "fundamental".
 
 > [!IMPORTANT]
@@ -40,7 +40,7 @@ Explanation:
 `0.55` = (`0.8` + `0.8` + `0.5` + `0.1`) / 4
 
 > [!NOTE]
-> In any single topic, there is likely an implied order. Since the subtopic space is small, it is an acceptable tradeoff easier organization. Alternately, a hyper-specific topic stucture could be created, if required. Example: It would probably be very helpful to understand `addition` before learning `multiplication`.
+> In any single topic, there is likely an implied order. Since the subtopic space is small, it is an acceptable tradeoff easier organization. Alternately, a hyper-specific topic structure could be created, if required. Example: It would probably be very helpful to understand `addition` before learning `multiplication`.
 
 ## Downward Score Propagation
 
@@ -61,8 +61,8 @@ numbers[/1.0<br/>numbers\] -.-x addition
 ```
 
 > [!NOTE]
-> Theoeretically, proficiency should propogate to pre-topics.
-> This is a limitation that is being investigated. Idea: have a binary flag to allow propogation to pretopics.
+> Theoretically, proficiency should propagate to pre-topics.
+> This is a limitation that is being investigated. Idea: have a binary flag to allow propagation to pretopics.
 
 # Explicit Scoring
 

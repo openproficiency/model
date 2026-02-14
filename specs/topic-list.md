@@ -1,6 +1,6 @@
 # Topic List
 
-A **Topic list** is the collection of [topics](experience-topic.md) that define a knowledge domain declared by a particular **issuer**.
+A **Topic list** is the collection of [topics](topic.md) that define a knowledge domain declared by a particular **issuer**.
 
 ## Required content
 
@@ -29,7 +29,7 @@ A topic list originates from the issuer.
 This enables:
 
 - Shared schema by multiple parties, discouraging overlap.
-- redundancy throughs storage across multiple services.
+- Redundancy through storage across multiple services.
 
 ## Dependencies
 

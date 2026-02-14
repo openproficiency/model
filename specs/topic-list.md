@@ -73,6 +73,60 @@ flowchart BT
   end
 ```
 
+## List Evolution
+
+### Non-breaking changes
+
+The topic list system is intended to be flexible within a single namespace, providing space
+to reorganize topics, subtopics, and pretopics with little or no effect on proficiency scores.
+
+#### Example - reorganizing
+
+The below example shows remove of an unnecessary middle layer.
+
+Before
+
+```mermaid
+flowchart BT
+
+arithmetic[/"arithmetic"\]
+  sum-and-difference -.-> arithmetic
+  product-and-quotient -.-> arithmetic
+
+
+sum-and-difference[/"sum-and-difference"\]
+  addition[/"addition"\] -.-> sum-and-difference
+  subtraction[/"subtraction"\] -.-> sum-and-difference
+
+product-and-quotient[/"product-and-quotient"\]
+  multiplication[/"multiplication"\] -.-> product-and-quotient
+  division[/"division"\] -.-> product-and-quotient
+```
+
+After
+
+```mermaid
+flowchart BT
+
+  arithmetic[/"arithmetic"\]
+
+    addition[/"addition"\] -.-> arithmetic
+    subtraction[/"subtraction"\] -.-> arithmetic
+    multiplication[/"multiplication"\] -.-> arithmetic
+    division[/"division"\] -.-> arithmetic
+```
+
+### Breaking changes
+
+As a topic list evolves, it may become necessary to modify an existing topic identifier.
+Because proficiency scores are stored against a topic's identifier, it would break existing scores.
+
+In this case, a migration process is required:
+
+1. Consume existing transcript entries according to the old schema.
+2. Transfer scores from the older topic list schema to the new topic list schema.
+3. Reissue new transcript entries.
+
 # Examples
 
 ### JSON

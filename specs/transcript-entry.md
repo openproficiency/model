@@ -33,28 +33,28 @@ All transcript entries are stored individually to enable selective sharing with 
 
 # Example
 
-Sam finished 2 modules in a course named 'Basic Arithmetic'. 2 transcript entries were created:
-
 ```json
-{
-  "userID": "fist.last@example.com",
-  "topic": "addition",
-  "topicList": "https://thecorestandards.com/math@0.1.0",
-  "score": 0.8,
-  "timestamp": "2026-01-01T01:01:01Z",
-  "issuer": "example.com",
-  "certificate": "..."
-},
-{
-  "userID": "chriswblake@gmail.com",
-  "topic": "subtraction",
-  "topicList": "https://thecorestandards.com/math@0.1.0",
-  "topicListVersion": "0.1.0",
-  "score": 0.8,
-  "timestamp": "2026-01-01T01:01:01Z",
-  "issuer": "example.com",
-  "certificate": "..."
-}
+[
+  {
+    "userID": "fist.last@example.com",
+    "topic": "addition",
+    "topicList": "https://thecorestandards.com/math@0.1.0",
+    "score": 0.8,
+    "timestamp": "2026-01-01T01:01:01Z",
+    "issuer": "example.com",
+    "certificate": "..."
+  },
+  {
+    "userID": "chriswblake@gmail.com",
+    "topic": "subtraction",
+    "topicList": "https://thecorestandards.com/math@0.1.0",
+    "topicListVersion": "0.1.0",
+    "score": 0.8,
+    "timestamp": "2026-01-01T01:01:01Z",
+    "issuer": "example.com",
+    "certificate": "..."
+  }
+]
 ```
 
 > [!NOTE]

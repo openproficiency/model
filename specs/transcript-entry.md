@@ -8,10 +8,11 @@ The following content must be included in each transcript entry.
 
 - User ID
 - Topic
+- TopicList + Version
 - Proficiency Score
-- Issuer
-- Topic Schema
 - Timestamp
+- Issuer (domain name)
+- Certificate
 
 ## Signed
 
@@ -36,23 +37,23 @@ Sam finished 2 modules in a course named 'Basic Arithmetic'. 2 transcript entrie
 
 ```json
 {
-  "userID": 1234,
-  "topic": 22344, // addition
-  "topicSchema": 0.1,
+  "userID": "fist.last@example.com",
+  "topic": "addition",
+  "topicList": "https://thecorestandards.com/math@0.1.0",
   "score": 0.8,
-  "timestamp": "...",
-  "issuer": "...",
-  "signature": "..."
+  "timestamp": "2026-01-01T01:01:01Z",
+  "issuer": "example.com",
+  "certificate": "..."
 },
 {
-  "userID": 1234,
-  "topic": 22345, // subtraction
-  "topicSchema": 0.1,
+  "userID": "chriswblake@gmail.com",
+  "topic": "subtraction",
+  "topicList": "https://thecorestandards.com/math@0.1.0",
+  "topicListVersion": "0.1.0",
   "score": 0.8,
-  "timestamp": ...,
-  "issuer": "...",
-  "schema_v": 0.1,
-  "signature": "..."
+  "timestamp": "2026-01-01T01:01:01Z",
+  "issuer": "example.com",
+  "certificate": "..."
 }
 ```
 

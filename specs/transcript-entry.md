@@ -28,7 +28,7 @@ All transcript entries are stored individually to enable selective sharing with 
 
 - Enables proficiency progress across multiple sources.
 - Enables storage of scores across multiple services.
-- Enables fine-grined privacy for sharing scores.
+- Enables fine-grained privacy for sharing scores.
 - Prevents repeated learning of proficient topics.
 
 # Example

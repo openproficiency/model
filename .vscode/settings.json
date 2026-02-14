@@ -1,0 +1,23 @@
+{
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 100
+  },
+  // Spell Checker
+  "cSpell.ignoreRegExpList": [
+    "/```[\\s\\S]*?```/g", // Markdown code blocks
+  ],
+  "cSpell.ignorePaths": [
+    ".devcontainer/devcontainer.json",
+    ".vscode/settings.json"
+  ],
+  "cSpell.words": [
+    "prereq",
+    "pretopic",
+    "pretopics",
+    "thecorestandards"
+  ],
+  // VS Code
+  "editor.formatOnSave": true
+}

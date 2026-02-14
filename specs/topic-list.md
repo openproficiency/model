@@ -6,11 +6,25 @@ A **Topic list** is the collection of [topics](topic.md) that define a knowledge
 
 The following content must be included in the list.
 
-- Issuer
-- Signature
-- Version
-- Topics List
-- Timestamp
+- Name - A namespace to associate the topics. Case insensitive. No special characters.
+- Description - A brief description of the knowledge domain covered by this topic list.
+- Version - Any indicator to unique identify the version of the list.
+- Issuer - The owner of this topic list.
+- Timestamp - The time with the list was created and assigned a version number.
+- Certificate - Verification from the issuer that the list is unmodified.
+- Topics - A dictionary of [Topic](topic.md) objects.
+- Dependencies - A list of URIs to required topic lists.
+
+## Topic Identifiers
+
+Because all [topics](topic.md) have the same significance, any hierarchy implied from its
+position in the list should not be considered rigid. All identifiers must be fully unique
+within the namespace of the topic list.
+
+This provides:
+
+- downstream topic lists can reference topics without long notation
+- reorganization of topics without breaking changes (need to recompute proficiency scores)
 
 ## Signed
 

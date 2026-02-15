@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transcript-entry.schema.json",
+
+  "title": "Transcript Entry",
+  "description": "A permanent record of a user's proficiency score for a single topic.",
+  "type": "object",
+
+  "properties": {
+    "$schema": {
+      "description": "JSON Schema version",
+      "type": "string"
+    },
+
+    "userID": {
+      "description": "Unique identifier for the user. Ex: 'user@example.com'",
+      "type": "string"
+    },
+
+    "topic": {
+      "description": "The topic identifier for which proficiency is being recorded. Kebab case. Ex: 'addition'",
+      "type": "string",
+      "format": "kebab-case",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+
+    "topicList": {
+      "description": "Reference to the topic list containing the topic, including version. Ex: 'https://example.com/math@1.0.0'",
+      "type": "string",
+      "pattern": "^https?://[a-z0-9.-]+(?:/[^@\\s]*)?@(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+
+    "score": {
+      "description": "Proficiency score for the topic. Value between 0.0 and 1.0",
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+
+    "timestamp": {
+      "description": "ISO 8601 timestamp of when this proficiency score was recorded.",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "issuer": {
+      "description": "Domain name of the entity that issued this transcript entry. Ex: 'example.com'",
+      "type": "string",
+      "format": "hostname",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}$"
+    },
+
+    "certificate": {
+      "description": "x.509 certificate in PEM format with embedded Ed25519 signature used to verify authenticity of this transcript entry.",
+      "format": "pem-certificate",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-----BEGIN CERTIFICATE-----\\r?\\n(?:[A-Za-z0-9+/]{64}\\r?\\n)+(?:[A-Za-z0-9+/]{1,64}=*\\r?\\n)-----END CERTIFICATE-----\\r?\\n?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+
+  "required": ["userID", "topic", "topicList", "score", "timestamp", "issuer", "certificate"],
+  "additionalProperties": false
+}

@@ -93,7 +93,6 @@ arithmetic[/"arithmetic"\]
   sum-and-difference -.-> arithmetic
   product-and-quotient -.-> arithmetic
 
-
 sum-and-difference[/"sum-and-difference"\]
   addition[/"addition"\] -.-> sum-and-difference
   subtraction[/"subtraction"\] -.-> sum-and-difference

@@ -7,7 +7,6 @@ A **Topic** is a defined unique area of knowledge and combined together to form 
 - All topics have the same significance. There is no predetermined hierarchy.
 - A topic is referred to differently depending on its relationship to another other topic.
 
-
 ## Types of Topics
 
 An **Atomic Topic** is a topic that is self-declared as a smallest knowledge domain.
@@ -63,7 +62,6 @@ pretopic -.-x topic2
 - A Group's dependencies should ideally be at a similar abstraction "layer of knowledge". This avoids a group topic with a very large number of subtopics.
 
 - Group topics enable the knowledge space to expand. For example:
-
   - Grow Higher - Create a new topic by combining existing subtopics. This defines higher-order ability.
   - Refactor - Replace a set of subtopics with a new group topic defined by the same subtopics.
   - Go Deeper - Create new topics then add them to an existing atomic topic, converting it into a group topic.

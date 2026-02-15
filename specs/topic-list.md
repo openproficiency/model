@@ -136,6 +136,8 @@ defines several prerequisites from common math for understanding binary math.
 <!-- prettier-ignore -->
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json",
+  
   "owner": "example.com",
   "name": "binary-math",
   "description": "Mathematics in binary for electrical circuits.",

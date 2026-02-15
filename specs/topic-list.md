@@ -50,26 +50,26 @@ This enables:
 A list may import topics from another list by declaring it as a dependency.
 
 - Imported topics may only be used as pretopics.
-- The dependency source is provided as a full URL, including version. Example `https://thecorestandards.com/topiclists/math.json@0.1.0`
+- The dependency source is provided as a full URL, including version. Example `https://example.com/math.json@0.1.0`
 - Dependencies are assigned a local namespace and referenced using `.` notation.
 - All direct and imported topics may be assigned proficiency scores.
 
-The below example illustrates importing the `thecorestandards/math` list, and assigning it the local `tcs-math` namespace.
-It then creates an owned topic called `arithmetic-in-circuits` that uses topics from that list.
+The below example illustrates importing a `math` list, and assigning it the local `std-math` namespace.
+It then creates an owned topic called `binary-math` that uses topics from that list.
 
 ```mermaid
 flowchart BT
 
-  arithmetic-in-circuits[/"arithmetic-in-circuits"\]
+  binary-math[/"binary-math"\]
 
-    addition[/"tcs-math.addition"\] -.-x arithmetic-in-circuits
-    subtraction[/"tcs-math.subtraction"\] -.-x arithmetic-in-circuits
-    multiplication[/"tcs-math.multiplication"\] -.-x arithmetic-in-circuits
-    division[/"tcs-math.division"\] -.-x arithmetic-in-circuits
+    addition[/"std-math.addition"\] -.-x binary-math
+    subtraction[/"std-math.subtraction"\] -.-x binary-math
+    multiplication[/"std-math.multiplication"\] -.-x binary-math
+    division[/"std-math.division"\] -.-x binary-math
 
   %% Dependencies
   subgraph dependencies
-    tcs-math@{ shape: docs, label: "tcs-math<br/>thecorestandards/math@0.1.0" }
+    std-math@{ shape: docs, label: "std-math<br/>example.com/math@0.1.0" }
   end
 ```
 
@@ -174,7 +174,7 @@ defines several prerequisites from common math for understanding binary math.
   },
 
   "dependencies": {
-    "std-math": "https://example.com/opm/topic-lists/math.json@0.1.0"
+    "std-math": "https://example.com/math.json@0.1.0"
   }
 }
 ```
@@ -217,5 +217,5 @@ topics:
       - binary-division
 
 dependencies:
-  std-math: https://thecorestandards.com/topics-lists/math.json@0.1.0
+  std-math: https://example.com/math.json@0.1.0
 ```

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json",
+
+  "userID": "fist.last@example.com",
+  "topic": "addition",
+  "topicList": "https://example.com/math@0.1.0",
+  "score": 0.8,
+  "timestamp": "2026-01-01T01:01:01Z",
+  "issuer": "example.com",
+  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
+}

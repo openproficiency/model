@@ -19,75 +19,7 @@ A proficiency level is defined similar to a [topic list](topic-list.md) except t
 - It cannot be directly assigned a [score](proficiency-score.md).
 - Multiple proficiency level definitions may be applied together. They only superimpose additional information.
 
-### Example - YAML
-
-The below example defines required proficiencies (topics with a minimum proficiency score) for 3 levels of a "math teacher" role.
-
-```yaml
-timestamp: "..."
-issuer: "national-teachers-association"
-signature: "..."
-version: "..."
-proficiency-levels:
-  math-teacher-junior:
-    pretopics:
-      - "tcs:basic-math"
-      - "nta:classroom-management"
-  
-  math-teacher:
-    pretopics:
-      - "nta:lesson-planning"
-      - "nta:lesson-customization"
-  
-  math-teacher-senior:
-    pretopics:
-      - "nta:teacher-mentoring"
-      - "nta:curriculum-development"
-
-dependencies:
-  tcs: the-core-standards
-  nta: national-teachers-association
-```
-
-# Examples
-
-## Math teacher job role
-
-```mermaid
-  flowchart BT
-
-  subgraph Topics
-    basic-math[/basic-math\]
-    classroom-management[/classroom-management\]
-
-    lesson-planning[/lesson-planning\]
-    lesson-customization[/lesson-customization\]
-
-    teacher-mentoring[/teacher-mentoring\]
-    curriculum-development[/curriculum-development\]
-  end
-
-  subgraph Proficiency Level
-    direction BT
-    math-teacher-junior{{"Junior Math Teacher"}}
-    math-teacher{{"Math Teacher<br/>"}}
-    math-teacher-senior{{"Senior Math Teacher<br/>"}}
-  end
-
-  basic-math -.-x math-teacher-junior
-  classroom-management -.-x math-teacher-junior
-
-  lesson-planning -.-x math-teacher
-  lesson-customization -.-x math-teacher
-
-  teacher-mentoring -.-x math-teacher-senior
-  curriculum-development -.-x math-teacher-senior
-```
-
-> [!NOTE]
-> This example role may might pull from multiple topic lists from different domains, like mathematics and pedagogy.
-
-## Arithmetic Level - Numeric
+### Arithmetic Level - Numeric
 
 ```mermaid
 flowchart BT
@@ -119,12 +51,8 @@ flowchart BT
    t_roots -.-x plvl_3
 ```
 
-> [!NOTE]
-> This role may align closely to a topic like `arithmetic` providing a more "human" way of referring to a user's proficiency in that area.
+### Arithmetic Level - Categorical
 
-
-
-## Arithmetic Level - Categorical
 ```mermaid
 flowchart BT
 
@@ -153,4 +81,75 @@ flowchart BT
 
    t_exponents -.-x plvl_advanced
    t_roots -.-x plvl_advanced
+```
+
+# Examples
+
+The below example defines required proficiencies (topics with a minimum score of `proficient`) for 3 levels of a "math teacher" role.
+
+### YAML
+
+```yaml
+issuer: "national-teachers-association"
+timestamp: "..."
+certificate: "..."
+version: "..."
+
+proficiency-levels:
+  math-teacher-junior:
+    pretopics:
+      - "tcs-math.basic-math"
+      - "nta-pedagogy.classroom-management"
+
+  math-teacher:
+    pretopics:
+      - "nta-pedagogy.lesson-planning"
+      - "nta-pedagogy.lesson-customization"
+
+  math-teacher-senior:
+    pretopics:
+      - "nta-pedagogy.teacher-mentoring"
+      - "nta-pedagogy.curriculum-development"
+
+dependencies:
+  tcs-math: "https://thecorestandards.com/topics-lists/math.json@0.1.0"
+  nta-pedagogy: "https://national-teachers-association.com/topics-lists/pedagogy.json@0.1.0"
+```
+
+```mermaid
+  flowchart BT
+
+  subgraph Topics
+    basic-math[/basic-math\]
+    classroom-management[/classroom-management\]
+
+    lesson-planning[/lesson-planning\]
+    lesson-customization[/lesson-customization\]
+
+    teacher-mentoring[/teacher-mentoring\]
+    curriculum-development[/curriculum-development\]
+  end
+
+  subgraph Proficiency Level
+    direction BT
+    math-teacher-junior{{"Junior Math Teacher"}}
+    math-teacher{{"Math Teacher<br/>"}}
+    math-teacher-senior{{"Senior Math Teacher<br/>"}}
+  end
+
+  %% Dependencies
+  subgraph dependencies
+    tcs-math@{ shape: docs, label: "tcs-math<br/>thecorestandards/math@0.1.0" }
+    nta-pedagogy@{ shape: docs, label: "nta-pedagogy<br/>national-teachers-association/pedagogy@0.1.0" }
+  end
+
+  %% Mapping
+  tcs-math -.- basic-math -.-x math-teacher-junior
+  nta-pedagogy -.- classroom-management -.-x math-teacher-junior
+
+  nta-pedagogy -.- lesson-planning -.-x math-teacher
+  nta-pedagogy -.- lesson-customization -.-x math-teacher
+
+  nta-pedagogy -.- teacher-mentoring -.-x math-teacher-senior
+  nta-pedagogy -.- curriculum-development -.-x math-teacher-senior
 ```

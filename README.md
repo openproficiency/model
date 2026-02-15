@@ -2,16 +2,23 @@
 
 The Open Proficiency Model (OPM) is an open definition for quantifying an individual's familiarity with skills, capabilities, and other abilities.
 
-Definitions include:
+Definitions to define the knowledge space:
 
 - [Topic](specs/topic.md) - a defined unique area of knowledge for gaining experience and becoming proficient.
-- [Proficiency Score](specs/proficiency-score.md) - a number indicating the degree of understanding for a specific topic.
-- [Proficiency Level](specs/proficiency-level.md) - A standardized interpretation for a collection of proficiency scores.
-- [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (Tutorials, projects, normal work, etc.)
 - [Topic List](specs/topic-list.md) - A list of topics provided by an issuer.
-- [Transcript Entry](specs/transcript-entry.md) - proficiency score for a single topic.
-- [Transcript](specs/transcript.md) - a collection of transcript entries for easier portability.
 - [Issuer](specs/issuer.md) - A verified entity that can provide a topic list and/or create transcript entries.
+
+Definitions to define and store proficiency:
+
+- [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (regular work, projects, tutorials, etc.)
+- [Proficiency Score](specs/proficiency-score.md) - a number/label indicating the degree of understanding for a specific topic.
+- [Transcript Entry](specs/transcript-entry.md) - a proficiency score assigned to a specific user, claimed by an issuer.
+- [Transcript](specs/transcript.md) - a collection of transcript entries for easier portability.
+
+Definitions to interpret proficiency:
+
+- [Proficiency Level](specs/proficiency-level.md) - a standardized interpretation for a collection of proficiency scores.
+- [Proficiency Level List](specs/proficiency-level-llist.md) - a collection of proficiency levels that imply order.
 
 ## Advantages
 

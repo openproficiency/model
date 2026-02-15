@@ -64,7 +64,7 @@
       "type": "object",
       "patternProperties": {
         "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
-          "$ref": "topic.schema.json"
+          "$ref": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic.schema.json"
         }
       },
       "additionalProperties": false

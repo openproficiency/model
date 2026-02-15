@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "proficiency-level.schema.json",
+
+  "title": "Proficiency Level",
+  "description": "A collection of topics that define a proficiency level within a proficiency levels list.",
+  "type": "object",
+
+  "properties": {
+    "$schema": {
+      "description": "JSON Schema version",
+      "type": "string"
+    },
+
+    "id": {
+      "description": "Unique identifier for this proficiency level within its list. Kebab case. Ex: 'my-level-id'",
+      "type": "string",
+      "format": "kebab-case",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+
+    "description": {
+      "description": "A brief explanation of this proficiency level. Max 100 characters. (optional)",
+      "type": "string",
+      "maxLength": 100
+    },
+
+    "pretopics": {
+      "description": "List of imported topics required for this proficiency level. Must reference topics from dependencies, not other proficiency levels.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Reference to an external topic (e.g., 'namespace.topic-id')",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+      },
+      "uniqueItems": true
+    }
+  },
+
+  "required": ["pretopics"],
+  "additionalProperties": false
+}

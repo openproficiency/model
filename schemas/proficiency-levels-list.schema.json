@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "proficiency-levels-list.schema.json",
+
+  "title": "Proficiency Levels List",
+  "description": "A collection of proficiency levels.",
+  "type": "object",
+
+  "properties": {
+    "$schema": {
+      "description": "JSON Schema version",
+      "type": "string"
+    },
+
+    "owner": {
+      "description": "The entity that maintains this proficiency levels list. Domain name. Ex: 'example.com'",
+      "type": "string",
+      "format": "hostname",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}$"
+    },
+
+    "name": {
+      "description": "A name to define scope for this proficiency levels list. Kebab case. Ex: 'my-list-name'",
+      "type": "string",
+      "format": "kebab-case",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+
+    "description": {
+      "description": "A brief description of the proficiency levels covered by this list.",
+      "type": "string",
+      "maxLength": 100
+    },
+
+    "version": {
+      "description": "Version of this list. Semantic versioning format. Ex: '1.0.0'",
+      "type": "string",
+      "format": "semver",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+
+    "timestamp": {
+      "description": "ISO 8601 timestamp of when this version was created.",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "certificate": {
+      "description": "x.509 certificate in PEM format with embedded Ed25519 signature used to verify authenticity of this proficiency levels list.",
+      "format": "pem-certificate",
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^-----BEGIN CERTIFICATE-----\\r?\\n(?:[A-Za-z0-9+/]{64}\\r?\\n)+(?:[A-Za-z0-9+/]{1,64}=*\\r?\\n)-----END CERTIFICATE-----\\r?\\n?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+
+    "proficiency-levels": {
+      "description": "Map of proficiency level identifiers to their definitions",
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
+          "$ref": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/proficiency-level.schema.json"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "dependencies": {
+      "description": "Map of shorthand aliases to external topic list references",
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
+          "type": "string",
+          "pattern": "^https?://[a-z0-9.-]+(?:/[^@\\s]*)?@(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "required": [
+    "owner",
+    "name",
+    "description",
+    "version",
+    "timestamp",
+    "certificate",
+    "proficiency-levels"
+  ],
+  "additionalProperties": false
+}

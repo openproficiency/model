@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/proficiency-levels-list.schema.json",
+  
+  "owner": "example.com",
+  "name": "math-teacher-levels",
+  "description": "...",
+  "version": "0.1.0",
+  "timestamp": "2026-01-26T01:00:00Z",
+  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
+
+  "proficiency-levels": {
+    "math-teacher-junior": {
+      "pretopics": [
+        "std-math.basic-math",
+        "std-pedagogy.classroom-management"
+      ]
+    },
+    "math-teacher": {
+      "pretopics": [
+        "std-pedagogy.lesson-planning",
+        "std-pedagogy.lesson-customization"
+      ]
+    },
+    "math-teacher-senior": {
+      "pretopics": [
+        "std-pedagogy.teacher-mentoring",
+        "std-pedagogy.curriculum-development"
+      ]
+    }
+  },
+  "dependencies": {
+    "std-math": "https://example.com/topics-lists/math.json@0.1.0",
+    "std-pedagogy": "https://example.com/topics-lists/pedagogy.json@0.1.0"
+  }
+}

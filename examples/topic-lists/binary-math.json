@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json",
+
+  "owner": "example.com",
+  "name": "binary-math",
+  "description": "Mathematics in binary for electrical circuits.",
+  "version": "0.1.0",
+  "timestamp": "2026-01-26T01:00:00Z",
+  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
+
+  "topics": {
+    "binary-addition": {
+      "description": "Combining of 2 or more numbers.",
+      "pretopics": ["std-math.addition"] 
+    },
+    "binary-subtraction": {
+      "description": "Taking one number or quantity away from another.",
+      "pretopics": ["std-math.subtraction"]
+    },
+    "binary-multiplication": {
+      "description": "The total of one number added to itself a specific number of times.",
+      "pretopics": ["std-math.multiplication"]
+    },
+    "binary-division": {
+      "description": "Splitting a number into equal parts.",
+      "pretopics": ["std-math.division"]
+    },
+    "binary-arithmetic": {
+      "description": "Application of electrical circuits to perform basic math operations.",
+      "subtopics": [
+        "binary-addition",
+        "binary-subtraction",
+        "binary-multiplication",
+        "binary-division"
+      ]
+    }
+  },
+
+  "dependencies": {
+    "std-math": "https://example.com/opm/topic-lists/math.json@0.1.0"
+  }
+}

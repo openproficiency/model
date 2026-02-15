@@ -1,0 +1,149 @@
+{
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json",
+
+  "owner": "example.com",
+  "name": "math",
+  "description": "Standard Mathematics",
+  "version": "0.1.0",
+  "timestamp": "2026-01-26T01:00:00Z",
+  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
+
+  "topics": {
+    "numbers": {
+      "description": "Understanding integers, rational numbers, real numbers, and their properties."
+    },
+    "fractions": {
+      "description": "Representation and operations with rational numbers expressed as ratios of integers.",
+      "pretopics": ["numbers"]
+    },
+    "decimals": {
+      "description": "Representation of numbers using base-10 positional notation with fractional parts.",
+      "pretopics": ["numbers", "fractions"]
+    },
+    "percentages": {
+      "description": "Expressing numbers as parts per hundred and solving percentage problems.",
+      "pretopics": ["fractions", "decimals"]
+    },
+    "variables": {
+      "description": "Use of symbols to represent unknown or changing quantities."
+    },
+    "constants": {
+      "description": "Fixed values that do not change."
+    },
+    "addition": {
+      "description": "Combining two or more numbers to find their sum or total.",
+      "pretopics": ["numbers"]
+    },
+    "subtraction": {
+      "description": "Finding the difference between numbers by removing one quantity from another.",
+      "pretopics": ["numbers"]
+    },
+    "multiplication": {
+      "description": "Repeated addition of a number to itself a specified number of times to find a product.",
+      "pretopics": ["numbers", "addition"]
+    },
+    "division": {
+      "description": "Splitting a number into equal parts or determining how many times one number contains another.",
+      "pretopics": ["numbers", "multiplication"]
+    },
+    "arithmetic": {
+      "description": "Fundamental operations: addition, subtraction, multiplication, and division.",
+      "subtopics": ["addition", "subtraction", "multiplication", "division"]
+    },
+    "order-of-operations": {
+      "description": "Rules for evaluating mathematical expressions with multiple operations (PEMDAS/BODMAS).",
+      "pretopics": ["arithmetic"]
+    },
+    "exponents": {
+      "description": "Representation of repeated multiplication using powers and understanding exponential notation.",
+      "pretopics": ["multiplication"]
+    },
+    "roots": {
+      "description": "Finding values that when raised to a power produce a given number, including square and nth roots.",
+      "pretopics": ["exponents"]
+    },
+    "expressions": {
+      "description": "Mathematical phrases combining numbers, variables, and operations without an equality sign.",
+      "pretopics": ["variables", "constants", "arithmetic"]
+    },
+    "equations": {
+      "description": "Mathematical statements asserting equality between two expressions and methods for solving them.",
+      "pretopics": ["expressions"]
+    },
+    "inequalities": {
+      "description": "Mathematical statements comparing expressions using greater than, less than, or related symbols.",
+      "pretopics": ["equations"]
+    },
+    "linear-equations": {
+      "description": "Equations of the first degree with one or more variables forming straight lines when graphed.",
+      "pretopics": ["equations"]
+    },
+    "quadratic-equations": {
+      "description": "Second-degree polynomial equations and methods for solving them including factoring.",
+      "pretopics": ["equations", "exponents"]
+    },
+    "polynomials": {
+      "description": "Expressions with variables and coefficients using addition, subtraction, and multiplication.",
+      "pretopics": ["expressions", "exponents"]
+    },
+    "factoring": {
+      "description": "Breaking down polynomials and numbers into products of simpler factors.",
+      "pretopics": ["polynomials", "multiplication"]
+    },
+    "functions": {
+      "description": "Relationships between inputs and outputs where each input corresponds to exactly one output.",
+      "pretopics": ["expressions", "equations"]
+    },
+    "algebra": {
+      "description": "Using symbols and variables to solve equations and understand structures.",
+      "subtopics": ["variables", "constants", "expressions", "equations", "functions", "polynomials"],
+      "pretopics": ["arithmetic"]
+    },
+    "ratios": {
+      "description": "Comparison of two quantities showing the relative size of one quantity to another.",
+      "pretopics": ["fractions"]
+    },
+    "proportions": {
+      "description": "Equations stating that two ratios are equal and methods for solving proportion problems.",
+      "pretopics": ["ratios", "equations"]
+    },
+    "coordinate-plane": {
+      "description": "Two-dimensional plane formed by perpendicular number lines for graphing points and relations.",
+      "pretopics": ["numbers"]
+    },
+    "graphing": {
+      "description": "Visual representation of equations, functions, and data on coordinate systems.",
+      "pretopics": ["coordinate-plane", "functions"]
+    },
+    "slope": {
+      "description": "Measure of the steepness of a line representing rate of change.",
+      "pretopics": ["linear-equations", "graphing"]
+    },
+    "geometry-basics": {
+      "description": "Fundamental concepts of shapes, sizes, positions, and properties of space and geometric figures."
+    },
+    "area-perimeter": {
+      "description": "Calculating the distance around shapes (perimeter) and the space enclosed within shapes (area).",
+      "pretopics": ["geometry-basics", "arithmetic"]
+    },
+    "volume-surface-area": {
+      "description": "Calculating three-dimensional space occupied by objects and the total area of their surfaces.",
+      "pretopics": ["area-perimeter"]
+    },
+    "pythagorean-theorem": {
+      "description": "In right triangles, the hypotenuse squared equals the sum of squares of the other two sides.",
+      "pretopics": ["geometry-basics", "exponents", "roots"]
+    },
+    "trigonometry-basics": {
+      "description": "Study of relationships between angles and sides of triangles using sine, cosine, and tangent.",
+      "pretopics": ["pythagorean-theorem", "functions"]
+    },
+    "statistics-basics": {
+      "description": "Collection, analysis, interpretation, and presentation of data using mean, median, mode, and range."
+    },
+    "probability": {
+      "description": "Mathematical study of likelihood and chance, quantifying the likelihood of events occurring.",
+      "pretopics": ["fractions", "percentages"]
+    }
+  }
+}

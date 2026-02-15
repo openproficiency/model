@@ -42,7 +42,7 @@ All transcript entries are stored individually to enable selective sharing with 
     "score": 0.8,
     "timestamp": "2026-01-01T01:01:01Z",
     "issuer": "example.com",
-    "certificate": "..."
+    "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
   },
   {
     "userID": "chriswblake@gmail.com",
@@ -52,7 +52,7 @@ All transcript entries are stored individually to enable selective sharing with 
     "score": 0.8,
     "timestamp": "2026-01-01T01:01:01Z",
     "issuer": "example.com",
-    "certificate": "..."
+    "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
   }
 ]
 ```

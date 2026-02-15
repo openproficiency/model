@@ -130,34 +130,35 @@ In this case, a migration process is required:
 
 ### JSON
 
-The below example imports `thecorestandards/math` list.
-It defines several prerequisites from common math for understanding binary math.
+The below example imports a standard `math` list, then
+defines several prerequisites from common math for understanding binary math.
 
 <!-- prettier-ignore -->
 ```json
 {
+  "owner": "example.com",
   "name": "binary-math",
-  "description": "...",
-  "version": "...",
-  "issuer": "...",
-  "certificate": "...",
-  "timestamp": "...",
+  "description": "Mathematics in binary for electrical circuits.",
+  "version": "0.1.0",
+  "timestamp": "2026-01-26T01:00:00Z",
+  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
+
   "topics": {
     "binary-addition": {
-      "description": "...",
-      "pretopics": ["tcs-math.addition"]
+      "description": "Combining of 2 or more numbers.",
+      "pretopics": ["std-math.addition"]
     },
     "binary-subtraction": {
-      "description": "...",
-      "pretopics": ["tcs-math.subtraction"]
+      "description": "Taking one number or quantity away from another.",
+      "pretopics": ["std-math.subtraction"]
     },
     "binary-multiplication": {
-      "description": "...",
-      "pretopics": ["tcs-math.multiplication"]
+      "description": "The total of one number added to itself a specific number of times.",
+      "pretopics": ["std-math.multiplication"]
     },
     "binary-division": {
-      "description": "...",
-      "pretopics": ["tcs-math.division"]
+      "description": "Splitting a number into equal parts.",
+      "pretopics": ["std-math.division"]
     },
     "binary-arithmetic": {
       "description": "Application of electrical circuits to perform basic math operations.",
@@ -169,8 +170,9 @@ It defines several prerequisites from common math for understanding binary math.
       ]
     }
   },
+
   "dependencies": {
-    "tcs-math": "https://thecorestandards.com/topics-lists/math.json@0.1.0"
+    "std-math": "https://example.com/opm/topic-lists/math.json@0.1.0"
   }
 }
 ```
@@ -180,29 +182,30 @@ It defines several prerequisites from common math for understanding binary math.
 The below example imports the `math` list. It uses the arithmetic-related topics from it instead of self-defining.
 
 ```yaml
+owner: "example.com"
 name: "binary-math"
-description: "..."
-issuer: "..."
-version: "..."
-certificate: "..."
-timestamp: "..."
+description: "Mathematics in binary for electrical circuits."
+version: "0.1.0"
+timestamp: "2026-01-26T01:00:00Z"
+certificate: ""-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----""
+
 topics:
   binary-addition:
-    description: ...
+    description: Combining of 2 or more numbers.
     pretopics:
-      - tcs-math.addition
+      - std-math.addition
   binary-subtraction:
-    description: ...
+    description: Taking one number or quantity away from another.
     pretopics:
-      - tcs-math.subtraction
+      - std-math.subtraction
   binary-multiplication:
-    description: ...
+    description: The total of one number added to itself a specific number of times.
     pretopics:
-      - tcs-math.multiplication
+      - std-math.multiplication
   binary-division:
-    description: ...
+    description: Splitting a number into equal parts.
     pretopics:
-      - tcs-math.division
+      - std-math.division
   binary-arithmetic:
     description: Application of electrical circuits to perform basic math operations.
     subtopics:
@@ -210,6 +213,7 @@ topics:
       - binary-subtraction
       - binary-multiplication
       - binary-division
+
 dependencies:
-  tcs-math: https://thecorestandards.com/topics-lists/math.json@0.1.0
+  std-math: https://thecorestandards.com/topics-lists/math.json@0.1.0
 ```

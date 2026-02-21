@@ -24,7 +24,7 @@ within the namespace of the topic list.
 This provides:
 
 - downstream topic lists can reference topics without long notation
-- reorganization of topics without breaking changes (need to recompute proficiency scores)
+- reorganization of topics without breaking changes (need to recompute scores)
 
 ## Signed
 
@@ -52,7 +52,7 @@ A list may import topics from another list by declaring it as a dependency.
 - Imported topics may only be used as pretopics.
 - The dependency source is provided as a full URL, including version. Example `https://example.com/math.json@0.1.0`
 - Dependencies are assigned a local namespace and referenced using `.` notation.
-- All direct and imported topics may be assigned proficiency scores.
+- All direct and imported topics may be assigned scores.
 
 The below example illustrates importing a `math` list, and assigning it the local `std-math` namespace.
 It then creates an owned topic called `binary-math` that uses topics from that list.
@@ -78,7 +78,7 @@ flowchart BT
 ### Non-breaking changes
 
 The topic list system is intended to be flexible within a single namespace, providing space
-to reorganize topics, subtopics, and pretopics with little or no effect on proficiency scores.
+to reorganize topics, subtopics, and pretopics with little or no effect on scores.
 
 #### Example - reorganizing
 
@@ -118,7 +118,7 @@ flowchart BT
 ### Breaking changes
 
 As a topic list evolves, it may become necessary to modify an existing topic identifier.
-Because proficiency scores are stored against a topic's identifier, it would break existing scores.
+Because scores are stored against a topic's identifier, it would break existing scores.
 
 In this case, a migration process is required:
 

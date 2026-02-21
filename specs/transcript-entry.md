@@ -1,6 +1,6 @@
 # Transcript Entry
 
-A **transcript entry** is a permanent record of a user's [proficiency score](proficiency-score.md) for a single [topic](-topic.md).
+A **transcript entry** is a permanent record of a user's [score](topic-score.md) for a single [topic](topic.md).
 
 ## Required content
 
@@ -9,14 +9,14 @@ The following content must be included in each transcript entry.
 - User ID
 - Topic
 - TopicList + Version
-- Proficiency Score
+- Topic Score
 - Timestamp
 - Issuer (domain name)
 - Certificate
 
 ## Signed
 
-All transcript entries are individually signed by the issuer to enable verification of proficiency scores.
+All transcript entries are individually signed by the issuer to enable verification of scores.
 
 - Prevents tampering of records.
 - Prevents record loss if an **issuer** is no longer available.

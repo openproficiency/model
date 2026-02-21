@@ -1,6 +1,6 @@
-# Proficiency Score
+# Topic Score
 
-A **Proficiency Score** is a number indicating the degree of understanding for a specific [topic](topic.md).
+A **Topic Score** is a number indicating the degree of understanding for a specific [topic](topic.md).
 
 - The score is between `0.0` and `1.0`:
   - A score of `0.0` indicates "No awareness" of the topic.
@@ -68,7 +68,7 @@ numbers[/1.0<br/>numbers\] -.-x addition
 
 Explicit scoring can be helpful for getting started. In the beginning, it may be burdensome or impossible to confidently define the topics and relationships via subtopics/pretopics.
 
-In this case, a topic can be internally organized into phases. As each phase is completed the proficiency score is increased.
+In this case, a topic can be internally organized into phases. As each phase is completed the score is increased.
 
 - The max possible explicit score is `0.8`.
 - A phase is complete if all its topics have a minimum score of `0.8`.

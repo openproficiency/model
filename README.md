@@ -11,14 +11,14 @@ Definitions to define the knowledge space:
 Definitions to define and store proficiency:
 
 - [Experience Source](specs/experience-source.md) - activities a user can complete to increase proficiency in topics. (regular work, projects, tutorials, etc.)
-- [Proficiency Score](specs/proficiency-score.md) - a number/label indicating the degree of understanding for a specific topic.
-- [Transcript Entry](specs/transcript-entry.md) - a proficiency score assigned to a specific user, claimed by an issuer.
+- [Topic Score](specs/topic-score.md) - a label indicating the degree of understanding for a specific topic.
+- [Transcript Entry](specs/transcript-entry.md) - a topic score assigned to a specific user, claimed by an issuer.
 - [Transcript](specs/transcript.md) - a collection of transcript entries for easier portability.
 
 Definitions to interpret proficiency:
 
-- [Proficiency Level](specs/proficiency-level.md) - a standardized interpretation for a collection of proficiency scores.
-- [Proficiency Level List](specs/proficiency-level-llist.md) - a collection of proficiency levels that imply order.
+- [Proficiency Level](specs/proficiency-level.md) - a standardized interpretation for a collection of topic scores.
+- [Proficiency Level List](specs/proficiency-level-list.md) - a collection of proficiency levels that imply order.
 
 ## Advantages
 

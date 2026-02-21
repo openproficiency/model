@@ -3,7 +3,7 @@
 A **Proficiency Level** is defined by a collection of [topics](topic.md) and
 is typically one entry in a [Proficiency Level List](proficiency-level-list.md).
 
-These levels serve as a standardized interpretation of those [proficiency scores](proficiency-score.md),
+A level serve as a standardized interpretation of those [topic scores](topic-score.md),
 enabling [issuers](issuer.md) to more easily collaborate in their area of expertise.
 
 Common use cases:
@@ -14,9 +14,9 @@ Common use cases:
 ### Requirements
 
 - It may only have pretopics, no subtopics.
-- It is considered "achieved" if all pretopics have a minimum proficiency score of `proficient`.
+- It is considered "achieved" if all pretopics have a minimum score of `proficient`.
 - It may only reference [imported topics](topic-list.md), not other proficiency levels.
-- It cannot be directly assigned a [proficiency score](proficiency-score.md).
+- It cannot be directly assigned a [score](topic-score.md).
 
 ```mermaid
 flowchart BT
@@ -50,7 +50,7 @@ flowchart BT
 
 > [!CAUTION]
 > Proficiency levels must not be used as [topics](topic-list.md) since they
-> cannot be directly assigned a [score](proficiency-score.md).
+> cannot be directly assigned a [score](topic-score.md).
 
 # Example
 

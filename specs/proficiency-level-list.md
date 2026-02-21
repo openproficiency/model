@@ -2,7 +2,7 @@
 
 A **Proficiency Levels List** is a collection of [proficiency levels](proficiency-level.md) that imply order via their naming or their required proficiencies.
 
-- Multiple proficiency level list may be applied in parallel, since they only provide an interpretation of the proficiency scores.
+- Multiple proficiency level lists may be applied in parallel, since they only provide an interpretation of the topic scores.
 
 ### Requirements
 

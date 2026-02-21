@@ -26,7 +26,7 @@ To become an Issuer, the entity must:
 Because an Issuer has ownership of a domain name, they have the ability digitally sign documents. As such, they hold the responsibility to:
 
 - Sign [Topic Lists](topic-list.md) when claiming the description of knowledge domains.
-- Sign [Transcript Entries](transcript-entry.md) when claiming proficiency scores for users.
+- Sign [Transcript Entries](transcript-entry.md) when claiming scores for users.
 
 ### Certificate requirements
 

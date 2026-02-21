@@ -31,14 +31,14 @@
     },
 
     "score": {
-      "description": "Proficiency score for the topic. Value between 0.0 and 1.0",
+      "description": "The degree of proficiency for a specific topic. Value between 0.0 and 1.0",
       "type": "number",
       "minimum": 0.0,
       "maximum": 1.0
     },
 
     "timestamp": {
-      "description": "ISO 8601 timestamp of when this proficiency score was recorded.",
+      "description": "ISO 8601 timestamp of when this topic's score was recorded.",
       "type": "string",
       "format": "date-time"
     },

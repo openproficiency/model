@@ -53,12 +53,12 @@ flowchart BT
     transcript-entry@{ shape: subproc, label: "transcript-entry" }
     transcript@{ shape: div-rect, label: "transcript" }
     issuer@{ shape: flag, label: "issuer" }
-    
+
     %% Mapping
     issuer --"adds signature"-->  transcript-entry
     topic-score --->  transcript-entry
     transcript-entry --"N entries"--> transcript
-    
+
     %% Mapping - External
     topic-list --"1 topic"--> topic-score
   end
@@ -66,8 +66,8 @@ flowchart BT
   subgraph official-interpretation["Official Interpretation"]
     direction BT
     %% Components
-    proficiency-level@{ shape: curv-trap, label: "proficiency-level" } 
-    proficiency-level-list{{"proficiency-level-list<br/>"}} 
+    proficiency-level@{ shape: curv-trap, label: "proficiency-level" }
+    proficiency-level-list{{"proficiency-level-list<br/>"}}
 
     %% Mapping
     proficiency-level --"N levels"--> proficiency-level-list
@@ -86,7 +86,7 @@ flowchart BT
     test
     etc.
   end
-  
+
   %% Mapping
   topic-list -."N Topics from N Lists".-x experience-sources
   experience-sources --"1 score<br/>1 user"--> topic-score
@@ -104,4 +104,5 @@ flowchart BT
   transcript --> your-application
 
 ```
+
 \* The `pre-` and `sub-` prefixes only indicate relationships between topics. They are not a different component.

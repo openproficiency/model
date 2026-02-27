@@ -1,108 +1,201 @@
 # Topic Score
 
-A **Topic Score** is a number indicating the degree of understanding for a specific [topic](topic.md).
+A **Topic Score** is an assessment indicating the degree of understanding for a specific [topic](topic.md), from no awareness of the subject to fluent usage of it.
 
-- The score is between `0.0` and `1.0`:
-  - A score of `0.0` indicates "No awareness" of the topic.
-  - A score `1.0` indicates "full understanding" of the topic.
-- The default process is **implicit** scoring unless an **explicit** scoring process is defined.
-
-## Implicit Scoring (default)
+## Score Options
 
 Some topics can be simple and hence obtain proficiency by familiarity and basic usage.
 
-- `0.0`: Unaware - Does not know of the topic's existence.
-- `0.1`: Aware - Ability to recognize the topic.
-- `0.5`: Familiar - Theoretical understanding.
-- `0.8`: Applied - Has practically used the knowledge.
+- `Unaware`: Does not know of the topic's existence.
+- `Aware`: Ability to recognize the topic.
+- `Familiar`: Theoretical understanding.
+- `Competent`: Practically apply in standard scenarios.
   - Minimum threshold for use as a [pretopic](topic.md#types-of-topics).
-- `1.0`: Proficient - Used enough to consider "fundamental".
-
-> [!IMPORTANT]
-> The score between **applied** (0.8) and **proficient** (1.0) is subjective. This provides room for customization. Example: A scoring process considering **recency** or **complexity**.
+- `Fluent`: Can consistently apply in new scenarios.
 
 ## Upward Score Propagation
 
-A topic calculates its score from its subtopics. It is the normalized sum of the subtopics.
+If a topic has subtopics, its score is calculated from its subtopics.
 
 ```mermaid
 flowchart BT
-arithmetic[/0.55<br/>arithmetic\]
 
-addition[/"0.8<br/>addition"\] --> arithmetic
-subtraction[/0.8<br/>subtraction\] --> arithmetic
-multiplication[/0.5<br/>multiplication\] --> arithmetic
-division[/0.1<br/>division\] --> arithmetic
+arithmetic@{ shape: trapezoid, label: "arithmetic<br/>
+<div style='display: flex;'>
+<div style='padding:0em 0.3em'>▪️<br/>unaware<br/>0%</div>
+<div style='padding:0em 0.3em'>🌱<br/>aware<br/>25%</div>
+<div style='padding:0em 0.3em'>🌿<br/>familiar<br/>25%</div>
+<div style='padding:0em 0.3em'>🪴<br/>competent<br/>50%</div>
+<div style='padding:0em 0.3em'>🌲<br/>fluent<br/>0%</div>
+</div>"}
+
+addition[/addition<br/>🪴 competent 🪴\] --> arithmetic
+subtraction[/subtraction<br/>🪴 competent 🪴\] --> arithmetic
+multiplication[/multiplication<br/>🌿 familiar 🌿\] --> arithmetic
+division[/division<br/>🌱 aware 🌱\] --> arithmetic
 ```
 
 Explanation:
 
-`0.55` = (`0.8` + `0.8` + `0.5` + `0.1`) / 4
-
-> [!NOTE]
-> In any single topic, there is likely an implied order. Since the subtopic space is small, it is an acceptable tradeoff easier organization. Alternately, a hyper-specific topic structure could be created, if required. Example: It would probably be very helpful to understand `addition` before learning `multiplication`.
+`0% unaware` = 0 / 4  
+`25% aware` = 1 / 4  
+`25% familiar` = 1 / 4  
+`50% competent` = 2 / 4  
+`0% fluent` = 0 / 4
 
 ## Downward Score Propagation
 
-Assigning a score to a group topic affects all of its subtopics equally.
-
-- Propagation does not affect **pretopics**.
+Assigning a score to a group topic affects all of its **subtopics** equally. However, **pretopics** are not affected.
 
 ```mermaid
-flowchart BT
-arithmetic[/0.8<br/>arithmetic\]
+flowchart TB
+arithmetic[/arithmetic<br/>🌿 familiar 🌿\]
 
-addition[/"0.8<br/>addition"\] --> arithmetic
-subtraction[/0.8<br/>subtraction\] --> arithmetic
-multiplication[/0.8<br/>multiplication\] --> arithmetic
-division[/0.8<br/>division\] --> arithmetic
+arithmetic -->  addition[/addition<br/>🌿 familiar 🌿\]
+arithmetic -->  subtraction[/subtraction<br/>🌿 familiar 🌿\]
+arithmetic -->  multiplication[/multiplication<br/>🌿 familiar 🌿\]
+arithmetic -->  division[/division<br/>🌿 familiar 🌿\]
 
-numbers[/1.0<br/>numbers\] -.-x addition
+numbers[/numbers<br/>🌲 fluent 🌲\]
+
+division ~~~ numbers
+numbers -.-x arithmetic
+
 ```
 
 > [!NOTE]
-> Theoretically, proficiency should propagate to pre-topics.
-> This is a limitation that is being investigated. Idea: have a binary flag to allow propagation to pretopics.
+> Philosophically, it makes sense for proficiency to propagate to pre-topics.
+> This is a limitation that is being investigated.
 
-# Explicit Scoring
+# Detailed Example
 
-Explicit scoring can be helpful for getting started. In the beginning, it may be burdensome or impossible to confidently define the topics and relationships via subtopics/pretopics.
+Below is an example of user's scores displayed directly on the `Math` topic list. Below it are some alternative ways of displaying a user's scores.
 
-In this case, a topic can be internally organized into phases. As each phase is completed the score is increased.
-
-- The max possible explicit score is `0.8`.
-- A phase is complete if all its topics have a minimum score of `0.8`.
-
-> [!IMPORTANT]
-> Downward score propagation does not apply to explicit scoring.
-
-### Example
+> [!NOTE]
+> The below is for illustration only. It is **_NOT_** intended to be an accurate representation of a **Math** topic list.
 
 ```mermaid
 flowchart BT
 
-subgraph prereq["Prerequisites"]
-  numbers1[/Numerals\]
-end
+numbers[/"numbers<br/>🌲 fluent 🌲"\]
 
-subgraph arithmetic["Topic: arithmetic"]
-  direction BT
+%% Abstraction 1
+  addition[/addition<br/>🌲 fluent 🌲\]
+  subtraction[/subtraction<br/>🌲 fluent 🌲\]
+  multiplication[/multiplication<br/>🪴 competent 🪴\]
+  division[/division<br/>🪴 competent 🪴\]
 
-  subgraph level1["Phase 1, Score: 0.5"]
-    direction BT
-    add[/Addition\]
-    subtract[/Subtraction\]
-  end
+  arithmetic[/arithmetic\]
+  addition --> arithmetic
+  subtraction --> arithmetic
+  multiplication --> arithmetic
+  division --> arithmetic
 
-  subgraph level2["Phase 2, Score: 0.8"]
-    direction BT
-    multiplication[/Multiplication\]
-    division[/Division\]
-  end
+  numbers -.-x addition
+  numbers -.-x subtraction
+  numbers -.-x multiplication
+  numbers -.-x division
 
-  level1 -->
-  level2
-end
+%% Abstraction 2
+  algebra[/algebra\]
+  constants[/constants<br/>🌿 familiar 🌿\] --> algebra
+  variables[/variables<br/>🌱 aware 🌱\] --> algebra
+  expressions[/expressions<br/>▪️ unaware ▪️\] --> algebra
+  single-variable-eqs[/single variable equations<br/>▪️ unaware ▪️\] --> algebra
 
-prereq -.-x arithmetic
+  arithmetic -.-x single-variable-eqs
+  arithmetic -.-x expressions
+
+%% Abstraction 3
+  math[/"math"\]
+  algebra --> math
+```
+
+### Visualizations
+
+#### Pie Chart
+
+Showing a user's combined score for the `Math` topic list.
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'pie1': '#EEE',
+      'pie2': '#008000',
+      'pie3': '#90EE90',
+      'pie4': 'yellow',
+      'pie5': 'orange'
+    }
+  }
+}%%
+pie title Math
+  "▪️ unaware (2)" : 2
+  "🌱 aware (1)" : 0.998
+  "🌿 familiar (1)" : 0.999
+  "🪴 competent (2)" : 2
+  "🌲 fluent (2)" : 2
+```
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'pie1': '#008000',
+      'pie2': '#90EE90'
+    }
+  }
+}%%
+pie title Arithmetic
+  "▪️ unaware (0)" : 0
+  "🌱 aware (0)" : 0
+  "🌿 familiar (0)" : 0
+  "🪴 competent (2)" : 2
+  "🌲 fluent (2)" : 2
+```
+
+#### Heat Map
+
+Showing a user's `Math` proficiency as a 'coverage' heat map.
+
+**Note:** font size does note have meaning.
+
+```mermaid
+%%{
+  init: {
+    'theme': 'base',
+    'treemap': {
+      'showValues': false,
+      'padding': '8'
+    },
+    'themeVariables': {
+      'borderWidth': '5',
+      'primaryColor': 'black',
+      'fontSize': '16pt'
+    }
+  }
+}%%
+treemap
+"math":::grouping
+  "algebra":::grouping
+    "single variable equations": 1:::unaware
+    "expressions": 1:::unaware
+    "contants": 1:::familiar
+    "variables": 1:::aware
+
+  "arithmetic":::grouping
+    "addition": 1:::fluent
+    "subtraction": 1:::fluent
+    "multiplication": 1:::competent
+    "division": 1:::competent
+
+classDef grouping fill: transparent
+
+classDef unaware fill: transparent
+classDef aware fill: orange
+classDef familiar fill: yellow
+classDef competent fill: #90EE90
+classDef fluent fill: #005d00
 ```

@@ -67,6 +67,19 @@ numbers -.-x arithmetic
 > Philosophically, it makes sense for proficiency to propagate to pre-topics.
 > This is a limitation that is being investigated.
 
+## Score Acceptance (and decay)
+
+It is currently on the receiver of a transcript to decide which scores are acceptable and if they are still of value.
+
+There are many situations where this may occur:
+
+- an issuer was not accredited
+- the industry has evolved, making prior knowledge more informative and less practical
+- a user has not applied certain knowledge (topics) in a long time
+
+> [!NOTE]
+> Recommendations and guidelines are intended to be created to help support this future need.
+
 # Detailed Example
 
 Below is an example of user's scores displayed directly on the `Math` topic list. Below it are some alternative ways of displaying a user's scores.

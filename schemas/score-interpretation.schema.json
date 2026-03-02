@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "score-interpretation.schema.json",
+
+  "title": "Score Interpretation",
+  "description": "A standardized interpretation of a set of topic scores, typically one of several in a score interpretation list.",
+  "type": "object",
+
+  "properties": {
+    "$schema": {
+      "description": "JSON Schema version",
+      "type": "string"
+    },
+
+    "id": {
+      "description": "Unique identifier for this score interpretation. Kebab case. Ex: 'my-interpretation-id'",
+      "type": "string",
+      "format": "kebab-case",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+
+    "name": {
+      "description": "A friendly name used for display",
+      "type": "string"
+    },
+
+    "description": {
+      "description": "A brief explanation of this score interpretation",
+      "type": "string"
+    },
+
+    "requirements": {
+      "description": "A set of topics and required scores for this interpretation.",
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$": {
+          "type": "string",
+          "description": "Score level required for the topic"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "required": ["name", "description", "requirements"],
+  "additionalProperties": false
+}

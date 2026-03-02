@@ -1,31 +1,40 @@
 {
-  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/proficiency-levels-list.schema.json",
+  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/score-interpretation-list.schema.json",
   
   "owner": "example.com",
   "name": "math-teacher-levels",
-  "description": "...",
+  "description": "Proficiency levels for mathematics teachers",
   "version": "0.1.0",
   "timestamp": "2026-01-26T01:00:00Z",
   "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
 
-  "proficiency-levels": {
+  "interpretations": {
     "math-teacher-junior": {
-      "pretopics": [
-        "std-math.basic-math",
-        "std-pedagogy.classroom-management"
-      ]
+      "name": "Math Teacher - Junior",
+      "description": "Junior math teacher with basic mathematical competency and foundational classroom management",
+      "requirements": {
+        "std-math.basic-math": "competent",
+        "std-pedagogy.classroom-management": "competent"
+      }
     },
     "math-teacher": {
-      "pretopics": [
-        "std-pedagogy.lesson-planning",
-        "std-pedagogy.lesson-customization"
-      ]
+      "name": "Math Teacher",
+      "description": "Experienced math teacher with advanced lesson planning and customization skills",
+      "requirements": {
+        "std-math.basic-math": "competent",
+        "std-pedagogy.lesson-planning": "competent",
+        "std-pedagogy.lesson-customization": "competent"
+      }
     },
     "math-teacher-senior": {
-      "pretopics": [
-        "std-pedagogy.teacher-mentoring",
-        "std-pedagogy.curriculum-development"
-      ]
+      "name": "Math Teacher - Senior",
+      "description": "Senior math teacher with expertise in mentoring and curriculum development",
+      "requirements": {
+        "std-math.basic-math": "competent",
+        "std-pedagogy.lesson-planning": "competent",
+        "std-pedagogy.teacher-mentoring": "competent",
+        "std-pedagogy.curriculum-development": "competent"
+      }
     }
   },
   "dependencies": {

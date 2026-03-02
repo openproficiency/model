@@ -17,8 +17,11 @@ Definitions to define and store proficiency:
 
 Definitions to interpret proficiency:
 
-- [Proficiency Level](specs/proficiency-level.md) - a standardized interpretation for a collection of topic scores.
-- [Proficiency Level List](specs/proficiency-level-list.md) - a collection of proficiency levels that imply order.
+- [Topic Score Interpretation](specs/score-interpretation.md) - a standardized interpretation for a set of topic scores.
+- [Topic Score Interpretation List](specs/score-interpretation-list.md) - a collection of topic score interpretations. Examples:
+  - [Badging](specs/score-interpretation-list.md#badges---goldsilverbronze)
+  - [Skill Proficiency Levels](specs/score-interpretation-list.md#simple-progression---arithmetic)
+  - [Job Role Levels](specs/score-interpretation-list.md#job-roles---math-teacher)
 
 ## Advantages
 

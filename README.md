@@ -69,15 +69,18 @@ flowchart BT
   subgraph official-interpretation["Official Interpretation"]
     direction BT
     %% Components
-    proficiency-level@{ shape: curv-trap, label: "proficiency-level" }
-    proficiency-level-list{{"proficiency-level-list<br/>"}}
+    score-requirement[/score-requirement\]
+    score-interpretation{{"score-interpretation<br/>"}}
+    score-interpretation-list@{ shape: docs, label: "score-interpretation-list" }
+
 
     %% Mapping
-    proficiency-level --"N levels"--> proficiency-level-list
+    score-requirement --"N requirements"--> score-interpretation
+    score-interpretation --"N interpretations"--> score-interpretation-list
 
     %% Mapping - External
-    topic-list -."N Topics from N Lists".-x proficiency-level
-    issuer --"adds signature"--> proficiency-level-list
+    topic-list --"1 topic<br/>1 score"--> score-requirement
+    issuer --"adds signature"--> score-interpretation-list
   end
 
   %% ----- YOUR RESOURCES ----- %%
@@ -103,7 +106,7 @@ flowchart BT
   end
 
   %% Mapping
-  proficiency-level-list --> your-application
+  score-interpretation-list --> your-application
   transcript --> your-application
 
 ```

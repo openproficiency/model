@@ -8,7 +8,7 @@
   "timestamp": "2026-01-26T01:00:00Z",
   "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
 
-  "interpretations": {
+  "score-interpretations": {
     "math-teacher-junior": {
       "name": "Math Teacher - Junior",
       "description": "Junior math teacher with basic mathematical competency and foundational classroom management",

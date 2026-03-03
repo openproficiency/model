@@ -39,11 +39,15 @@ A topic list originates from the issuer.
 
 - It is served **publicly** with minimal restriction.
 - It may be redistributed by other parties.
+- It may be served from any URL.
 
 This enables:
 
 - Shared schema by multiple parties, discouraging overlap.
 - Redundancy through storage across multiple services.
+
+> [!TIP]
+> If a list uses another as dependency, it is recommended to use the original hosted URL. This will reduce the chance of breaking changes on the consuming list because a dependency was moved.
 
 ## Dependencies
 

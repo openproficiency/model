@@ -31,10 +31,9 @@
     },
 
     "score": {
-      "description": "The degree of proficiency for a specific topic. Value between 0.0 and 1.0",
-      "type": "number",
-      "minimum": 0.0,
-      "maximum": 1.0
+      "description": "The degree of proficiency for a specific topic. [unaware, aware, familiar, competent, fluent]",
+      "type": "string",
+      "enum": ["unaware", "aware", "familiar", "competent", "fluent"]
     },
 
     "timestamp": {

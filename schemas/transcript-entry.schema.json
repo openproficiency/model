@@ -25,9 +25,9 @@
     },
 
     "topicList": {
-      "description": "Reference to the topic list containing the topic, including version. Ex: 'https://example.com/math@1.0.0'",
+      "description": "HTTP(S) URL to the versioned topic list (YAML/JSON)",
       "type": "string",
-      "pattern": "^https?://[a-z0-9.-]+(?:/[^@\\s]*)?@(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+      "format": "uri"
     },
 
     "score": {

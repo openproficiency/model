@@ -39,7 +39,10 @@ A topic list originates from the issuer.
 
 - It is served **publicly** with minimal restriction.
 - It may be redistributed by other parties.
-- It may be served from any URL.
+- It may be served from any URL, provided it uniquely indicates the list and version.
+  - Example: https://example.com/topic-lists/0.1.0/math.json
+  - Example: https://example.com/math.json?v=0.1.0
+  - Example: https://example.com?list=math&v=0.1.0
 
 This enables:
 
@@ -54,7 +57,7 @@ This enables:
 A list may import topics from another list by declaring it as a dependency.
 
 - Imported topics may only be used as pretopics.
-- The dependency source is provided as a full URL, including version. Example `https://example.com/math.json@0.1.0`
+- The dependency source is provided as a full URL, including some indicator for version. Example `https://example.com/0.1.0/math.json`
 - Dependencies are assigned a local namespace and referenced using `.` notation.
 - All direct and imported topics may be assigned scores.
 
@@ -73,7 +76,7 @@ flowchart BT
 
   %% Dependencies
   subgraph dependencies
-    std-math@{ shape: docs, label: "std-math<br/>example.com/math@0.1.0" }
+    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.json" }
   end
 ```
 
@@ -178,7 +181,7 @@ defines several prerequisites from common math for understanding binary math.
   },
 
   "dependencies": {
-    "std-math": "https://example.com/math.json@0.1.0"
+    "std-math": "https://example.com/0.1.0/math.json"
   }
 }
 ```
@@ -221,5 +224,5 @@ topics:
       - binary-division
 
 dependencies:
-  std-math: https://example.com/math.json@0.1.0
+  std-math: https://example.com/0.1.0/math.json
 ```

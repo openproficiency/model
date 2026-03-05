@@ -37,6 +37,6 @@
   },
 
   "dependencies": {
-    "std-math": "https://example.com/opm/topic-lists/math.json@0.1.0"
+    "std-math": "https://example.com/topic-lists/0.1.0/math.json"
   }
 }

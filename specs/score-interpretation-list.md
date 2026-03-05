@@ -104,7 +104,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/math.json@0.1.0
+  math: https://example.com/0.1.0/math.json
 ```
 
 Information
@@ -190,7 +190,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/math.json@0.1.0
+  math: https://example.com/0.1.0/math.json
 ```
 
 </details>
@@ -222,8 +222,8 @@ Below is an example of defining internal requirements for "Math Teacher" job rol
 
   %% Dependencies
   subgraph dependencies
-    std-math@{ shape: docs, label: "std-math<br/>example.com/math@0.1.0" }
-    std-pedagogy@{ shape: docs, label: "std-pedagogy<br/>example.com/pedagogy@0.1.0" }
+    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.json" }
+    std-pedagogy@{ shape: docs, label: "std-pedagogy<br/>example.com/0.1.0/pedagogy.json" }
   end
 
   %% Mapping
@@ -271,8 +271,8 @@ score-interpretations:
       std-pedagogy.curriculum-development: comptent
 
 dependencies:
-  std-math: "https://example.com/topics-lists/math.json@0.1.0"
-  std-pedagogy: "https://example.com/topics-lists/pedagogy.json@0.1.0"
+  std-math: "https://example.com/topics-lists/0.1.0/math.json"
+  std-pedagogy: "https://example.com/topics-lists/0.1.0/pedagogy.json"
 ```
 
 </details>
@@ -346,7 +346,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/math.json@0.1.0
+  math: https://example.com/0.1.0/math.json
 ```
 
 </details>
@@ -420,7 +420,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/math.json@0.1.0
+  math: https://example.com/0.1.0/math.json
 ```
 
 </details>

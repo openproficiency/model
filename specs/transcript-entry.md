@@ -38,7 +38,7 @@ All transcript entries are stored individually to enable selective sharing with 
   {
     "userID": "fist.last@example.com",
     "topic": "addition",
-    "topicList": "https://example.com/math@0.1.0",
+    "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",
     "timestamp": "2026-01-01T01:01:01Z",
     "issuer": "example.com",
@@ -47,7 +47,7 @@ All transcript entries are stored individually to enable selective sharing with 
   {
     "userID": "chriswblake@gmail.com",
     "topic": "subtraction",
-    "topicList": "https://example.com/math@0.1.0",
+    "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",
     "timestamp": "2026-01-01T01:01:01Z",
     "issuer": "example.com",

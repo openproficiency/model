@@ -38,7 +38,7 @@
     }
   },
   "dependencies": {
-    "std-math": "https://example.com/topics-lists/math.json@0.1.0",
-    "std-pedagogy": "https://example.com/topics-lists/pedagogy.json@0.1.0"
+    "std-math": "https://example.com/topic-lists/0.1.0/math.json",
+    "std-pedagogy": "https://example.com/topic-lists/0.1.0/pedagogy.json"
   }
 }

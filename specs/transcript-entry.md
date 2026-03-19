@@ -10,7 +10,7 @@ The following content must be included in each transcript entry.
 - Topic
 - TopicList + Version
 - Topic Score
-- Timestamp
+- Issued At
 - Issuer (domain name)
 - Certificate
 
@@ -40,7 +40,7 @@ All transcript entries are stored individually to enable selective sharing with 
     "topic": "addition",
     "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",
-    "timestamp": "2026-01-01T01:01:01Z",
+    "issued-at": "2026-01-01T01:01:01Z",
     "issuer": "example.com",
     "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
   },
@@ -49,7 +49,7 @@ All transcript entries are stored individually to enable selective sharing with 
     "topic": "subtraction",
     "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",
-    "timestamp": "2026-01-01T01:01:01Z",
+    "issued-at": "2026-01-01T01:01:01Z",
     "issuer": "example.com",
     "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
   }

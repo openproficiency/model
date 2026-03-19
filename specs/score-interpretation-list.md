@@ -8,7 +8,7 @@ A **Score Interpretation List** is a collection of [score interpretations](score
 - Description - A brief description of the knowledge domain covered by this topic list.
 - Version - Any indicator to unique identify the version of the list.
 - Issuer - The owner of this topic list.
-- Timestamp - The time with the list was created and assigned a version number.
+- Issued At - The time when the list was created and assigned a version number.
 - Certificate - Verification from the issuer that the list is unmodified.
 - Score Interpretations - A dictionary of [score interpretation](score-interpration.md) objects.
 - Dependencies - A list of URIs to required topic lists.
@@ -78,7 +78,7 @@ owner: example.com
 name: math-levels
 description: Mathematics Proficiency Levels
 version: 0.1.0
-timestamp: 2026-01-26T01:00:00Z
+issued-at: 2026-01-26T01:00:00Z
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 score-interpretations:
@@ -158,7 +158,7 @@ owner: example.com
 name: math-levels
 description: Mathematics Proficiency Levels
 version: 0.1.0
-timestamp: 2026-01-26T01:00:00Z
+issued-at: 2026-01-26T01:00:00Z
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 score-interpretations:
@@ -245,7 +245,7 @@ owner: example.com
 name: math-teacher-levels
 description: Internal definition of math teacher proficiency.
 version: "0.1.0"
-timestamp: "2026-01-26T01:00:00Z",
+issued-at: "2026-01-26T01:00:00Z",
 certificate: "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
 
 score-interpretations:
@@ -320,7 +320,7 @@ owner: example.com
 name: math-badges
 description: Mathematics badges themed metals.
 version: 0.1.0
-timestamp: 2026-01-26T01:00:00Z
+issued-at: 2026-01-26T01:00:00Z
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 score-interpretations:
@@ -394,7 +394,7 @@ owner: example.com
 name: math-badges-magic
 description: Mathematics badges themed in the world of magic and spells.
 version: 0.1.0
-timestamp: 2026-01-26T01:00:00Z
+issued-at: 2026-01-26T01:00:00Z
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 score-interpretations:

@@ -36,7 +36,7 @@
       "enum": ["unaware", "aware", "familiar", "competent", "fluent"]
     },
 
-    "timestamp": {
+    "issued-at": {
       "description": "ISO 8601 timestamp of when this topic's score was recorded.",
       "type": "string",
       "format": "date-time"
@@ -64,6 +64,6 @@
     }
   },
 
-  "required": ["userID", "topic", "topicList", "score", "timestamp", "issuer", "certificate"],
+  "required": ["userID", "topic", "topicList", "score", "issued-at", "issuer", "certificate"],
   "additionalProperties": false
 }

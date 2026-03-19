@@ -5,7 +5,7 @@
   "topic": "addition",
   "topicList": "https://example.com/topic-lists/0.1.0/math.json",
   "score": "competent",
-  "timestamp": "2026-01-01T01:01:01Z",
+  "issued-at": "2026-01-01T01:01:01Z",
   "issuer": "example.com",
   "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
 }

@@ -61,31 +61,5 @@ requirements:
   math.division: aware
 ```
 
-### Grouped Format (beta)
-
-This is a proposed format to allow grouping of requirements. It is not yet supported.
-
-- Flexibility to organize in a way that maps to your ecosystem
-  - Example: Learning modules are often defined by their "learning objectives".
-- Ability to report by requirement set ID.
-
-```yaml
-id: arithmetic-1
-name: Arithmetic - Level 1
-description: Practical experience with addition and subtraction. Prepared to start Arithmetic Level 2
-requirements:
-  requirement-1: # Any ID is valid
-    description: Applied use of addition and subtraction
-    requirements:
-      math.addition: competent
-      math.subtraction: competent
-
-  requirement-2: # Any ID is valid
-    description: Introduced to multiplication and division
-    requirements:
-      math.multiplication: aware
-      math.division: aware
-```
-
 > [!NOTE]
 > Dependencies are not shown in the above example, because they are provided in the score interpretation list.

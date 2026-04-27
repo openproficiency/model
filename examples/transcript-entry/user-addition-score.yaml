@@ -6,5 +6,5 @@ topic-list: https://example.com/topic-lists/0.1.0/math.yml
 score: competent
 issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z
-issuer: example.com
+issued-by: example.com
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----

@@ -49,7 +49,7 @@
       "format": "date-time"
     },
 
-    "issuer": {
+    "issued-by": {
       "description": "Domain name of the entity that issued this transcript entry. Ex: 'example.com'",
       "type": "string",
       "format": "hostname",
@@ -78,7 +78,7 @@
     "score",
     "issued-at",
     "valid-until",
-    "issuer",
+    "issued-by",
     "certificate"
   ],
   "additionalProperties": false

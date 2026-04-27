@@ -12,7 +12,7 @@ The following content must be included in each transcript entry.
 - Topic Score
 - Issued At
 - Valid Until
-- Issuer (domain name)
+- Issued By (domain name)
 - Certificate
 
 ## Signed

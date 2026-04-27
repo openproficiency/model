@@ -127,6 +127,75 @@ numbers[/"numbers"\]
 
 ```
 
+<details>
+
+<summary> Show YAML</summary>
+
+```yaml
+topics:
+  numbers:
+    description: Understanding numeric values and representations
+
+  addition:
+    description: Combining 2 individuals values together
+    pretopics:
+      - numbers
+
+  subtraction:
+    description: Finding the difference between 2 values
+    pretopics:
+      - numbers
+
+  multiplication:
+    description: Repeated addition to produce a product
+    pretopics:
+      - numbers
+
+  division:
+    description: Splitting a value into equal parts
+    pretopics:
+      - numbers
+
+  arithmetic:
+    description: Fundamental numeric operations
+    subtopics:
+      - addition
+      - subtraction
+      - multiplication
+      - division
+
+  variables:
+    description: Symbols used to represent unknown values
+
+  constants:
+    description: Fixed values that do not change
+
+  expressions:
+    description: Combinations of numbers, variables, and operators
+    pretopics:
+      - arithmetic
+
+  single-variable-equations:
+    description: Equations with one unknown variable
+    pretopics:
+      - arithmetic
+
+  algebra:
+    description: Solving and reasoning with symbolic relationships
+    subtopics:
+      - variables
+      - constants
+      - expressions
+      - single-variable-equations
+
+  math:
+    description: Broad mathematical proficiency
+    subtopics:
+      - algebra
+```
+
+</details>
+
 ### What does this graph say?
 
 - The `addition` topic requires understanding the `numbers` topic before beginning.

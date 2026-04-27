@@ -10,7 +10,7 @@ The following content must be included in the list.
 - Description - A brief description of the knowledge domain covered by this topic list.
 - Version - Any indicator to unique identify the version of the list.
 - Issuer - The owner of this topic list.
-- Issued At - The time with the list was created and assigned a version number.
+- Issued At - The time when the list was created and assigned a version number.
 - Certificate - Verification from the issuer that the list is unmodified.
 - Topics - A dictionary of [Topic](topic.md) objects.
 - Dependencies - A list of URIs to required topic lists.
@@ -191,12 +191,12 @@ defines several prerequisites from common math for understanding binary math.
 The below example imports the `math` list. It uses the arithmetic-related topics from it instead of self-defining.
 
 ```yaml
-owner: "example.com"
-name: "binary-math"
-description: "Mathematics in binary for electrical circuits."
-version: "0.1.0"
-issued-at: "2026-01-26T01:00:00Z"
-certificate: ""-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----""
+owner: example.com
+name: binary-math
+description: Mathematics in binary for electrical circuits.
+version: 0.1.0
+issued-at: 2026-01-26T01:00:00Z
+certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 topics:
   binary-addition:

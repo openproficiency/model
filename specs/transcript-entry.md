@@ -55,6 +55,3 @@ All transcript entries are stored individually to enable selective sharing with 
   }
 ]
 ```
-
-> [!NOTE]
-> The above is just an example of fields. No specific format is defined.

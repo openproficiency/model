@@ -60,7 +60,6 @@ numbers[/numbers<br/>🌲 fluent 🌲\]
 
 division ~~~ numbers
 numbers -.-x arithmetic
-
 ```
 
 > [!NOTE]

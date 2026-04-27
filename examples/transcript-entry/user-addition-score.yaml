@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json
 
-userID: fist.last@example.com
+user-email: fist.last@example.com
 topic: addition
 topicList: https://example.com/topic-lists/0.1.0/math.json
 score: competent

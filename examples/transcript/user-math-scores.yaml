@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript.schema.json
 
-- userID: first.last@example.com
+- user-email: first.last@example.com
   topic: addition
   topicList: https://example.com/topic-lists/0.1.0/math.json
   score: competent
@@ -9,7 +9,7 @@
   issuer: example.com
   certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
-- userID: first.last@example.com
+- user-email: first.last@example.com
   topic: subtraction
   topicList: https://example.com/topic-lists/0.1.0/math.json
   score: competent

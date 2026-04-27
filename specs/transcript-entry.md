@@ -6,7 +6,7 @@ A **transcript entry** is a permanent record of a user's [score](topic-score.md)
 
 The following content must be included in each transcript entry.
 
-- User ID
+- User Email
 - Topic
 - TopicList + Version
 - Topic Score
@@ -57,7 +57,7 @@ There are many situations where this may occur, for example:
 ```json
 [
   {
-    "userID": "fist.last@example.com",
+    "user-email": "fist.last@example.com",
     "topic": "addition",
     "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",
@@ -67,7 +67,7 @@ There are many situations where this may occur, for example:
     "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
   },
   {
-    "userID": "chriswblake@gmail.com",
+    "user-email": "chriswblake@gmail.com",
     "topic": "subtraction",
     "topicList": "https://example.com/0.1.0/math.json",
     "score": "competent",

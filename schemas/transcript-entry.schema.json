@@ -12,9 +12,10 @@
       "type": "string"
     },
 
-    "userID": {
-      "description": "Unique identifier for the user. Ex: 'user@example.com'",
-      "type": "string"
+    "user-email": {
+      "description": "The user's email address to act as a unique identifier. Ex: 'user@example.com'",
+      "type": "string",
+      "format": "email"
     },
 
     "topic": {
@@ -71,7 +72,7 @@
   },
 
   "required": [
-    "userID",
+    "user-email",
     "topic",
     "topicList",
     "score",

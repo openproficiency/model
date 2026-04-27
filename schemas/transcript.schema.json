@@ -4,5 +4,8 @@
 
   "title": "Transcript",
   "description": "A collection of transcript entries representing a user's proficiency across multiple topics.",
-  "type": "array"
+  "type": "array",
+  "items": {
+    "$ref": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json"
+  }
 }

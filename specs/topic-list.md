@@ -133,6 +133,11 @@ In this case, a migration process is required:
 2. Transfer scores from the older topic list schema to the new topic list schema.
 3. Reissue new transcript entries.
 
+### Validity Period
+
+The topic list system is intended to support both stable and rapidly evolving knowledge spaces.
+All [topics](topic-list.md) provide a **recommended** score validity period (default: 2 years) for use when assigning [transcript entries](transcript-entry.md).
+
 # Examples
 
 ### JSON
@@ -155,19 +160,23 @@ defines several prerequisites from common math for understanding binary math.
   "topics": {
     "binary-addition": {
       "description": "Combining of 2 or more numbers.",
-      "pretopics": ["std-math.addition"]
+      "pretopics": ["std-math.addition"],
+      "validity-period": 1830 // ~5 years
     },
     "binary-subtraction": {
       "description": "Taking one number or quantity away from another.",
-      "pretopics": ["std-math.subtraction"]
+      "pretopics": ["std-math.subtraction"],
+      "validity-period": 1830 // ~5 years
     },
     "binary-multiplication": {
       "description": "The total of one number added to itself a specific number of times.",
-      "pretopics": ["std-math.multiplication"]
+      "pretopics": ["std-math.multiplication"],
+      "validity-period": 1830 // ~5 years
     },
     "binary-division": {
       "description": "Splitting a number into equal parts.",
-      "pretopics": ["std-math.division"]
+      "pretopics": ["std-math.division"],
+      "validity-period": 1830 // ~5 years
     },
     "binary-arithmetic": {
       "description": "Application of electrical circuits to perform basic math operations.",
@@ -203,18 +212,22 @@ topics:
     description: Combining of 2 or more numbers.
     pretopics:
       - std-math.addition
+    validity-period: 1830 # ~5 years
   binary-subtraction:
     description: Taking one number or quantity away from another.
     pretopics:
       - std-math.subtraction
+    validity-period: 1830 # ~5 years
   binary-multiplication:
     description: The total of one number added to itself a specific number of times.
     pretopics:
       - std-math.multiplication
+    validity-period: 1830 # ~5 years
   binary-division:
     description: Splitting a number into equal parts.
     pretopics:
       - std-math.division
+    validity-period: 1830 # ~5 years
   binary-arithmetic:
     description: Application of electrical circuits to perform basic math operations.
     subtopics:

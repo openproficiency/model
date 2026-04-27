@@ -11,19 +11,23 @@
   "topics": {
     "binary-addition": {
       "description": "Combining of 2 or more numbers.",
-      "pretopics": ["std-math.addition"] 
+      "pretopics": ["std-math.addition"],
+      "validity-period": 3660
     },
     "binary-subtraction": {
       "description": "Taking one number or quantity away from another.",
-      "pretopics": ["std-math.subtraction"]
+      "pretopics": ["std-math.subtraction"],
+      "validity-period": 3660
     },
     "binary-multiplication": {
       "description": "The total of one number added to itself a specific number of times.",
-      "pretopics": ["std-math.multiplication"]
+      "pretopics": ["std-math.multiplication"],
+      "validity-period": 3660
     },
     "binary-division": {
       "description": "Splitting a number into equal parts.",
-      "pretopics": ["std-math.division"]
+      "pretopics": ["std-math.division"],
+      "validity-period": 3660
     },
     "binary-arithmetic": {
       "description": "Application of electrical circuits to perform basic math operations.",

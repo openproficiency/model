@@ -42,6 +42,12 @@
       "format": "date-time"
     },
 
+    "valid-until": {
+      "description": "ISO 8601 timestamp of when this topic's score expires.",
+      "type": "string",
+      "format": "date-time"
+    },
+
     "issuer": {
       "description": "Domain name of the entity that issued this transcript entry. Ex: 'example.com'",
       "type": "string",
@@ -64,6 +70,15 @@
     }
   },
 
-  "required": ["userID", "topic", "topicList", "score", "issued-at", "issuer", "certificate"],
+  "required": [
+    "userID",
+    "topic",
+    "topicList",
+    "score",
+    "issued-at",
+    "valid-until",
+    "issuer",
+    "certificate"
+  ],
   "additionalProperties": false
 }

@@ -79,6 +79,19 @@ addition:
   docs_url: https://example.com/docs/addition
 ```
 
+### Validity Period
+
+Some topics are more stable and others are rapidly evolving or even being replaced.
+
+As such, each topic provides a **suggested** score validity period, measured in days, for use when issuing [transcript entries](transcript-entry.md).
+
+The below example suggests setting the expiration date at 10 years from the date it is issued.
+
+```yaml
+addition:
+  validity-period: 3660 # 10 years
+```
+
 ## Tips
 
 - Use abstraction to clarify seemingly overlapping domains (i.e. same words but different context)

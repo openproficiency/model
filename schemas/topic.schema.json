@@ -31,6 +31,12 @@
       "format": "uri"
     },
 
+    "validity-period": {
+      "description": "The suggested validity period when assigning a score to this topic. Min 30 days. Default is 732 days (~2 years).",
+      "type": "integer",
+      "minimum": 1,
+      "default": 732
+    },
 
     "subtopics": {
       "description": "List of topics that directly represent proficiency in a subspace of this topic.",

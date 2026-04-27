@@ -4,6 +4,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.printWidth": 100
   },
+  // YAML
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/score-interpretation-list.schema.json" : "examples/score-interpretation-list/**.yaml",
+    "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json" : "examples/topic-list/**.yaml",
+    "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json": "examples/transcript-entry/**.yaml",
+    "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript.schema.json": "examples/transcript/**.yaml",
+  },
   // Spell Checker
   "cSpell.ignoreRegExpList": [
     "/```[\\s\\S]*?```/g", // Markdown code blocks

@@ -41,4 +41,4 @@ topics:
       - binary-division
 
 dependencies:
-  std-math: https://example.com/topic-lists/0.1.0/math.json
+  std-math: https://example.com/topic-lists/0.1.0/math.yml

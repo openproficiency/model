@@ -13,3 +13,27 @@ A **transcript** is a collection of [transcript entries](transcript-entry.md). I
 - A Simple JSON file with array of transcript entries.
 - A Simple YAML file with array of transcript entries.
 - A PDF document with embedded JSON/YAML file.
+
+# Example
+
+```yml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript.schema.json
+
+- user-email: first.last@example.com
+  topic: addition
+  topic-list: https://example.com/topic-lists/0.1.0/math.yml
+  score: competent
+  issued-at: 2026-01-01T01:01:01Z
+  valid-until: 2028-01-01T01:01:01Z
+  issued-by: example.com
+  certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+
+- user-email: first.last@example.com
+  topic: subtraction
+  topic-list: https://example.com/topic-lists/0.1.0/math.yml
+  score: competent
+  issued-at: 2026-01-01T01:01:01Z
+  valid-until: 2028-01-01T01:01:01Z
+  issued-by: example.com
+  certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+```

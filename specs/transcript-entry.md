@@ -54,27 +54,15 @@ There are many situations where this may occur, for example:
 
 # Example
 
-```json
-[
-  {
-    "user-email": "fist.last@example.com",
-    "topic": "addition",
-    "topic-list": "https://example.com/0.1.0/math.json",
-    "score": "competent",
-    "issued-at": "2026-01-01T01:01:01Z",
-    "valid-until": "2028-01-01T01:01:01Z",
-    "issuer": "example.com",
-    "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
-  },
-  {
-    "user-email": "chriswblake@gmail.com",
-    "topic": "subtraction",
-    "topic-list": "https://example.com/0.1.0/math.json",
-    "score": "competent",
-    "issued-at": "2026-01-01T01:01:01Z",
-    "valid-until": "2028-01-01T01:01:01Z",
-    "issuer": "example.com",
-    "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----"
-  }
-]
+```yml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json
+
+user-email: first.last@example.com
+topic: addition
+topic-list: https://example.com/topic-lists/0.1.0/math.yml
+score: competent
+issued-at: 2026-01-01T01:01:01Z
+valid-until: 2028-01-01T01:01:01Z
+issued-by: example.com
+certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 ```

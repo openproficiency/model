@@ -104,7 +104,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.json
+  math: https://example.com/0.1.0/math.yml
 ```
 
 Information
@@ -190,7 +190,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.json
+  math: https://example.com/0.1.0/math.yml
 ```
 
 </details>
@@ -222,8 +222,8 @@ Below is an example of defining internal requirements for "Math Teacher" job rol
 
   %% Dependencies
   subgraph dependencies
-    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.json" }
-    std-pedagogy@{ shape: docs, label: "std-pedagogy<br/>example.com/0.1.0/pedagogy.json" }
+    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.yml" }
+    std-pedagogy@{ shape: docs, label: "std-pedagogy<br/>example.com/0.1.0/pedagogy.yml" }
   end
 
   %% Mapping
@@ -244,9 +244,9 @@ Below is an example of defining internal requirements for "Math Teacher" job rol
 owner: example.com
 name: math-teacher-levels
 description: Internal definition of math teacher proficiency.
-version: "0.1.0"
-issued-at: "2026-01-26T01:00:00Z",
-certificate: "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
+version: 0.1.0
+issued-at: 2026-01-26T01:00:00Z
+certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 score-interpretations:
   math-teacher-junior:
@@ -271,8 +271,8 @@ score-interpretations:
       std-pedagogy.curriculum-development: comptent
 
 dependencies:
-  std-math: "https://example.com/topics-lists/0.1.0/math.json"
-  std-pedagogy: "https://example.com/topics-lists/0.1.0/pedagogy.json"
+  std-math: https://example.com/topics-lists/0.1.0/math.yml
+  std-pedagogy: https://example.com/topics-lists/0.1.0/pedagogy.yml
 ```
 
 </details>
@@ -346,7 +346,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.json
+  math: https://example.com/0.1.0/math.yml
 ```
 
 </details>
@@ -420,7 +420,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.json
+  math: https://example.com/0.1.0/math.yml
 ```
 
 </details>

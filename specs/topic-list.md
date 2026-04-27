@@ -39,10 +39,10 @@ A topic list originates from the issuer.
 
 - It is served **publicly** with minimal restriction.
 - It may be redistributed by other parties.
-- It may be served from any URL, provided it uniquely indicates the list and version.
-  - Example: https://example.com/topic-lists/0.1.0/math.json
+- It may be served from any URL, provided it uniquely indicates the list, version, and format.
+  - Example: https://example.com/topic-lists/0.1.0/math.yml
   - Example: https://example.com/math.json?v=0.1.0
-  - Example: https://example.com?list=math&v=0.1.0
+  - Example: https://example.com?list=math&v=0.1.0&f=json
 
 This enables:
 
@@ -57,7 +57,7 @@ This enables:
 A list may import topics from another list by declaring it as a dependency.
 
 - Imported topics may only be used as pretopics.
-- The dependency source is provided as a full URL, including some indicator for version. Example `https://example.com/0.1.0/math.json`
+- The dependency source is provided as a full URL, including some indicator for version. Example `https://example.com/0.1.0/math.yml`
 - Dependencies are assigned a local namespace and referenced using `.` notation.
 - All direct and imported topics may be assigned scores.
 
@@ -76,7 +76,7 @@ flowchart BT
 
   %% Dependencies
   subgraph dependencies
-    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.json" }
+    std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.yml" }
   end
 ```
 
@@ -140,66 +140,12 @@ All [topics](topic-list.md) provide a **recommended** score validity period (def
 
 # Examples
 
-### JSON
-
-The below example imports a standard `math` list, then
-defines several prerequisites from common math for understanding binary math.
-
-<!-- prettier-ignore -->
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json",
-  
-  "owner": "example.com",
-  "name": "binary-math",
-  "description": "Mathematics in binary for electrical circuits.",
-  "version": "0.1.0",
-  "issued-at": "2026-01-26T01:00:00Z",
-  "certificate": "-----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----",
-
-  "topics": {
-    "binary-addition": {
-      "description": "Combining of 2 or more numbers.",
-      "pretopics": ["std-math.addition"],
-      "validity-period": 1830 // ~5 years
-    },
-    "binary-subtraction": {
-      "description": "Taking one number or quantity away from another.",
-      "pretopics": ["std-math.subtraction"],
-      "validity-period": 1830 // ~5 years
-    },
-    "binary-multiplication": {
-      "description": "The total of one number added to itself a specific number of times.",
-      "pretopics": ["std-math.multiplication"],
-      "validity-period": 1830 // ~5 years
-    },
-    "binary-division": {
-      "description": "Splitting a number into equal parts.",
-      "pretopics": ["std-math.division"],
-      "validity-period": 1830 // ~5 years
-    },
-    "binary-arithmetic": {
-      "description": "Application of electrical circuits to perform basic math operations.",
-      "subtopics": [
-        "binary-addition",
-        "binary-subtraction",
-        "binary-multiplication",
-        "binary-division"
-      ]
-    }
-  },
-
-  "dependencies": {
-    "std-math": "https://example.com/0.1.0/math.json"
-  }
-}
-```
-
-### YAML
-
-The below example imports the `math` list. It uses the arithmetic-related topics from it instead of self-defining.
+The below example imports a standard `math` list.
+It then uses them as common math as prerequisites for understanding binary math.
 
 ```yaml
+$schema: https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/topic-list.schema.json
+
 owner: example.com
 name: binary-math
 description: Mathematics in binary for electrical circuits.
@@ -212,22 +158,22 @@ topics:
     description: Combining of 2 or more numbers.
     pretopics:
       - std-math.addition
-    validity-period: 1830 # ~5 years
+
   binary-subtraction:
     description: Taking one number or quantity away from another.
     pretopics:
       - std-math.subtraction
-    validity-period: 1830 # ~5 years
+
   binary-multiplication:
     description: The total of one number added to itself a specific number of times.
     pretopics:
       - std-math.multiplication
-    validity-period: 1830 # ~5 years
+
   binary-division:
     description: Splitting a number into equal parts.
     pretopics:
       - std-math.division
-    validity-period: 1830 # ~5 years
+
   binary-arithmetic:
     description: Application of electrical circuits to perform basic math operations.
     subtopics:
@@ -237,5 +183,5 @@ topics:
       - binary-division
 
 dependencies:
-  std-math: https://example.com/0.1.0/math.json
+  std-math: https://example.com/0.1.0/math.yml
 ```

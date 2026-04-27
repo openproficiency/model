@@ -33,5 +33,5 @@ score-interpretations:
       std-pedagogy.curriculum-development: competent
 
 dependencies:
-  std-math: https://example.com/topic-lists/0.1.0/math.json
-  std-pedagogy: https://example.com/topic-lists/0.1.0/pedagogy.json
+  std-math: https://example.com/topic-lists/0.1.0/math.yml
+  std-pedagogy: https://example.com/topic-lists/0.1.0/pedagogy.yml

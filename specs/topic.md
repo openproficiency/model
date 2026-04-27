@@ -76,7 +76,7 @@ Each topic may provide a URL to a resource with more details about that topic.
 
 ```yaml
 addition:
-  docs_url: https://example.com/docs/addition
+  docs-url: https://example.com/docs/addition
 ```
 
 ### Validity Period

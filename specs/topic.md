@@ -55,6 +55,22 @@ pretopic -.-x topic1
 pretopic -.-x topic2
 ```
 
+## Extended Information
+
+The following are additional fields that are often provided alongside a topic to provide guidance in common situations.
+
+### Description
+
+A single name is unlikely to explain the knowledge space covered by that topic.
+
+As such, each topic provides a description field to provider further explanation.
+
+```yaml
+addition:
+  description: Combining 2 individuals values together
+```
+
+
 ## Tips
 
 - Use abstraction to clarify seemingly overlapping domains (i.e. same words but different context)

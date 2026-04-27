@@ -25,6 +25,13 @@
       "maxLength": 100
     },
 
+    "docs_url": {
+      "description": "HTTP(S) URL to a reference that explains this topic.",
+      "type": "string",
+      "format": "uri"
+    },
+
+
     "subtopics": {
       "description": "List of topics that directly represent proficiency in a subspace of this topic.",
       "type": "array",

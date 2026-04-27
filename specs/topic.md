@@ -70,6 +70,14 @@ addition:
   description: Combining 2 individuals values together
 ```
 
+### Documentation Reference
+
+Each topic may provide a URL to a resource with more details about that topic.
+
+```yaml
+addition:
+  docs_url: https://example.com/docs/addition
+```
 
 ## Tips
 

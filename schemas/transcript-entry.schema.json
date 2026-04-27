@@ -25,7 +25,7 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
 
-    "topicList": {
+    "topic-list": {
       "description": "HTTP(S) URL to the versioned topic list (YAML/JSON)",
       "type": "string",
       "format": "uri"
@@ -74,7 +74,7 @@
   "required": [
     "user-email",
     "topic",
-    "topicList",
+    "topic-list",
     "score",
     "issued-at",
     "valid-until",

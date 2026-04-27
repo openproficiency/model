@@ -8,7 +8,7 @@ The following content must be included in each transcript entry.
 
 - User Email
 - Topic
-- TopicList + Version
+- Topic List + Version
 - Topic Score
 - Issued At
 - Valid Until
@@ -59,7 +59,7 @@ There are many situations where this may occur, for example:
   {
     "user-email": "fist.last@example.com",
     "topic": "addition",
-    "topicList": "https://example.com/0.1.0/math.json",
+    "topic-list": "https://example.com/0.1.0/math.json",
     "score": "competent",
     "issued-at": "2026-01-01T01:01:01Z",
     "valid-until": "2028-01-01T01:01:01Z",
@@ -69,7 +69,7 @@ There are many situations where this may occur, for example:
   {
     "user-email": "chriswblake@gmail.com",
     "topic": "subtraction",
-    "topicList": "https://example.com/0.1.0/math.json",
+    "topic-list": "https://example.com/0.1.0/math.json",
     "score": "competent",
     "issued-at": "2026-01-01T01:01:01Z",
     "valid-until": "2028-01-01T01:01:01Z",

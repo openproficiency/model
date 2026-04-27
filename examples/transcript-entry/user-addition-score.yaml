@@ -2,7 +2,7 @@
 
 user-email: fist.last@example.com
 topic: addition
-topicList: https://example.com/topic-lists/0.1.0/math.json
+topic-list: https://example.com/topic-lists/0.1.0/math.json
 score: competent
 issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z

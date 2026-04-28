@@ -7,9 +7,9 @@ An **Issuer** is a verified entity with 2 abilities:
 
 Note: Issuers are typically credible in a particular knowledge domain.
 
-## Verification
+## Credibility
 
-Anyone may be a **verified** issuer, but this does not mean other parties must accept their claims.
+Anyone may be a issuer, but this does not mean other parties must accept their claims.
 For an Issuer to be effective, it must also be perceived as credible by the community.
 
 To become an Issuer, the entity must:
@@ -34,6 +34,16 @@ Signed materials must embed the following 2 objects, providing the source of the
 
 - An embedded `x.509` certificate provides the public key (issuer identity).
 - An embedded `Ed25519` signature built from all protect fields.
+
+## Score Verification Service
+
+An issuer may optionally provide a dedicated service for additional verification of [transcript entries](transcript-entry.md) they have issued.
+
+This is useful for increased confidence with receivers and provides the ability for an issuer to revoke scores they had previously issued.
+
+The issuer simply includes the [Verification URL](transcript-entry.md#verification-url) field, which is a URL to a service they manage.
+
+For technical details, see the [transcript entry verification](transcript-entry-verification.md) spec.
 
 # Examples
 

@@ -56,6 +56,12 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}$"
     },
 
+    "verification-url": {
+      "description": "HTTPS URL to the issuer verification API endpoint. Used for additional confirmation of this transcript entry.",
+      "type": "string",
+      "format": "uri"
+    },
+
     "certificate": {
       "description": "x.509 certificate in PEM format with embedded Ed25519 signature used to verify authenticity of this transcript entry.",
       "format": "pem-certificate",

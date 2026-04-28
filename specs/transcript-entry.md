@@ -15,6 +15,18 @@ The following content must be included in each transcript entry.
 - Issued By (domain name)
 - Certificate
 
+## Extended Content
+
+### Verification URL
+
+An issuer may append an additional URL to enable additional verification that the certificate is still endorsed.
+
+- **Type**: URL string pointing to the issuer's verification API.
+- **Purpose**: Tells receivers where to query verification status for entries from this issuer.
+- **Privacy**: The API only accepts an entry's certificate's hash as input and return only a verification status. No user-identifiable data is transmitted.
+
+For more details, see [Transcript Entry Verification](transcript-entry-verification.md).
+
 ## Signed
 
 All transcript entries are individually signed by the issuer to enable verification of scores.
@@ -52,6 +64,8 @@ There are many situations where this may occur, for example:
 - an issuer was not accredited
 - a score was revoked
 
+> Receivers are highly encouraged to check validity status if the `verification-url` is provided.
+
 # Example
 
 ```yml
@@ -63,6 +77,7 @@ topic-list: https://example.com/topic-lists/0.1.0/math.yml
 score: competent
 issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z
+verification-url: https://example.com/verify-scores
 issued-by: example.com
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 ```

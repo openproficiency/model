@@ -29,6 +29,19 @@ Definitions to interpret proficiency:
 - **Distributed** - All transcript records are independent of the issuer and learning source.
 - **Never Repeat** - Knowledge topics and proficiency are transferrable. New courses on the same topics don't invalidate old courses.
 
+## Works With Open Proficiency
+
+The **Works With Open Profiency** badge helps indicate to users of your platform, that their (new) proficiencies will be easy to manage, distribute, and validate across ecosystems.
+
+<img width="180px" src="works-with/wwop-pink.png" />
+
+### Can I add this to my service?
+
+If your product or service follows all or most of the expectations in the specifications, then yes.
+
+> [!TIP]
+> A "Works With" program is planned but not in development yet. Self-regulation by the community is the preferred method for now.
+
 ## Diagram
 
 ```mermaid

@@ -52,12 +52,13 @@ The `requirements` field supports basic inclusive logical expressions.
 
 - If no expression is declared, the default is `and`.
 - Expressions can be nested.
-- A unique identifier can optionally be suffixed to each expression tag. Examples: `and-12345`, `or-12345`
+- Expressions may optionally include a unique identifier as a suffix. Examples: `and-123`, `or-abc`, `at-least-3-abc2`
 
-| Operator | Description                               |
-| -------- | ----------------------------------------- |
-| `and`    | All expressions must be satisfied         |
-| `or`     | At least one expression must be satisfied |
+| Operator     | Description                                |
+| ------------ | ------------------------------------------ |
+| `and`        | All expressions must be satisfied          |
+| `or`         | At least one expression must be satisfied  |
+| `at-least-N` | At least `N` expressions must be satisfied |
 
 ### Lack of Competency (unsupported)
 
@@ -128,6 +129,22 @@ requirements:
   or:
     math.addition: familiar
     math.subtraction: familiar
+```
+
+### AT-LEAST-N — Threshold Required
+
+The user must satisfy at least 3 of the listed requirements.
+
+```yaml
+id: math-presenter
+name: Math Presenter
+description: Can present math lessons using at least 3 of 4 available classroom surfaces.
+requirements:
+  at-least-3:
+    pedagogy.chalk-board: competent
+    pedagogy.white-board: competent
+    pedagogy.projector: competent
+    pedagogy.touch-screen: competent
 ```
 
 ### Nested Logic — Combining AND/OR

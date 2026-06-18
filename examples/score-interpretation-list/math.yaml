@@ -38,6 +38,17 @@ score-interpretations:
         math.addition: familiar
         math.subtraction: familiar
 
+  # AT-LEAST — Minimum number of operands must be satisfied
+  math-presenter:
+    name: Math Presenter
+    description: Can present math lessons using at least 3 of 4 available classroom surfaces.
+    requirements:
+      at-least-3:
+        pedagogy.chalk-board: competent
+        pedagogy.white-board: competent
+        pedagogy.projector: competent
+        pedagogy.touch-screen: competent
+
   # Nested Logic — Combining AND/OR
   math-tutor-1:
     name: Math Tutor Level 1

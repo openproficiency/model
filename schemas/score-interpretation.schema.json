@@ -30,7 +30,7 @@
     },
 
     "requirements": {
-      "description": "A logical expression of topics and required scores for this interpretation. Supports logical operators (and, or) for composing requirements. A flat topic-score map is treated as implicit 'and'. Operators may have a unique identifier suffix (e.g., 'and-12345', 'or-1'). Topic keys always contain a dot (dependency.topic) so they cannot conflict with operator keywords.",
+      "description": "A logical expression of topics and required scores for this interpretation. Supports logical operators (and, or, at-least-N) for composing requirements. A flat topic-score map is treated as implicit 'and'. Operators may have a unique identifier suffix (e.g., 'and-12345', 'or-1', 'at-least-3-core'). Topic keys always contain a dot (dependency.topic) so they cannot conflict with operator keywords.",
       "$id": "requirements-expression",
       "type": "object",
       "patternProperties": {
@@ -40,6 +40,10 @@
         },
         "^or(-[a-z0-9]+)*$": {
           "description": "At least one expression must be satisfied. Each entry in the value is a separate operand.",
+          "$ref": "requirements-expression"
+        },
+        "^at-least-[1-9][0-9]*(?:-[a-z0-9]+)*$": {
+          "description": "At least N expressions must be satisfied, where N is encoded in the operator name. Each entry in the value is a separate operand.",
           "$ref": "requirements-expression"
         },
         "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)+$": {

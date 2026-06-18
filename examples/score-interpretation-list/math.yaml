@@ -23,7 +23,7 @@ score-interpretations:
     name: Arithmetic - Level 1
     description: Practical experience with addition and subtraction. Prepared to start Arithmetic Level 2
     requirements:
-      and: # Explicitly declared
+      all: # Explicitly declared
         math.addition: competent
         math.subtraction: competent
         math.multiplication: aware
@@ -34,7 +34,7 @@ score-interpretations:
     name: Math - getting started star
     description: Students get a star for completing at least 1 lesson.
     requirements:
-      or:
+      any:
         math.addition: familiar
         math.subtraction: familiar
 
@@ -54,12 +54,12 @@ score-interpretations:
     name: Math Tutor Level 1
     description: Qualified to tutor students in arithmetic plus at least one advanced branch.
     requirements:
-      and:
+      all:
         math.addition: competent
         math.subtraction: competent
         math.multiplication: competent
         math.division: competent
-      or:
+      any:
         math.trigonometry: competent
         math.calculus: competent
 
@@ -68,16 +68,16 @@ score-interpretations:
     name: Math Tutor Level 2
     description: Qualified to tutor multiple students in arithmetic plus at least one advanced branch.
     requirements:
-      and-math:
-        or-1: # Fundamentals
+      all-math:
+        all-fundamentals: # Fundamentals
           math.addition: competent
           math.subtraction: competent
           math.multiplication: competent
           math.division: competent
-        or-2: # At least one advanced math subject
+        any-advanced: # At least one advanced math subject
           math.trigonometry: competent
           math.calculus: competent
-      and-pedagogy:
+      all-pedagogy:
         pedagogy.curriculum-development: familiar
         pedagogy.classroom-management: familiar
 

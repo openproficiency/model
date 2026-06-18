@@ -427,19 +427,19 @@ dependencies:
 
 ### Logical Composition — Math Tutor
 
-The below example demonstrates using logical operators (`and`, `or`) to define requirements where a math tutor must be competent in all four arithmetic operations AND at least one advanced subject.
+The below example demonstrates using logical operators (`all`, `any`) to define requirements where a math tutor must be competent in all four arithmetic operations AND at least one advanced subject.
 
 ```mermaid
 flowchart BT
 
-subgraph "and"
+subgraph "all"
   addition[/addition\]
   subtraction[/subtraction\]
   multiplication[/multiplication\]
   division[/division\]
 end
 
-subgraph "or"
+subgraph "any"
   trigonometry[/trigonometry\]
   calculus[/calculus\]
 end
@@ -448,13 +448,13 @@ subgraph Score Interpretations
   math-tutor{{"Math Tutor<br/>✨ Level 1"}}
 end
 
-%% AND: all arithmetic required
+%% All
 addition -.competent.-x math-tutor
 subtraction -.competent.-x math-tutor
 multiplication -.competent.-x math-tutor
 division -.competent.-x math-tutor
 
-%% OR: at least one advanced subject
+%% ANY
 trigonometry -.competent.-x math-tutor
 calculus -.competent.-x math-tutor
 ```
@@ -475,12 +475,12 @@ score-interpretations:
     name: Math Tutor Level 1
     description: Qualified to tutor students in arithmetic plus at least one advanced branch.
     requirements:
-      and:
+      all:
         math.addition: competent
         math.subtraction: competent
         math.multiplication: competent
         math.division: competent
-      or:
+      any:
         math.trigonometry: competent
         math.calculus: competent
 

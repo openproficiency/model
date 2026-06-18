@@ -424,3 +424,68 @@ dependencies:
 ```
 
 </details>
+
+### Logical Composition — Math Tutor
+
+The below example demonstrates using logical operators (`and`, `or`) to define requirements where a math tutor must be competent in all four arithmetic operations AND at least one advanced subject.
+
+```mermaid
+flowchart BT
+
+subgraph "and"
+  addition[/addition\]
+  subtraction[/subtraction\]
+  multiplication[/multiplication\]
+  division[/division\]
+end
+
+subgraph "or"
+  trigonometry[/trigonometry\]
+  calculus[/calculus\]
+end
+
+subgraph Score Interpretations
+  math-tutor{{"Math Tutor<br/>✨ Level 1"}}
+end
+
+%% AND: all arithmetic required
+addition -.competent.-x math-tutor
+subtraction -.competent.-x math-tutor
+multiplication -.competent.-x math-tutor
+division -.competent.-x math-tutor
+
+%% OR: at least one advanced subject
+trigonometry -.competent.-x math-tutor
+calculus -.competent.-x math-tutor
+```
+
+<details>
+<summary>Show YAML</summary>
+
+```yaml
+owner: example.com
+name: math-pathways
+description: Mathematics proficiency levels with logical composition.
+version: 0.1.0
+issued-at: 2026-01-26T01:00:00Z
+certificate: null
+
+score-interpretations:
+  math-tutor-1:
+    name: Math Tutor Level 1
+    description: Qualified to tutor students in arithmetic plus at least one advanced branch.
+    requirements:
+      and:
+        math.addition: competent
+        math.subtraction: competent
+        math.multiplication: competent
+        math.division: competent
+      or:
+        math.trigonometry: competent
+        math.calculus: competent
+
+dependencies:
+  math: https://example.com/topic-lists/0.1.0/math.yml
+```
+
+</details>

@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/score-interpretation-list.schema.json
+
+owner: example.com
+name: math-pathways
+description: Mathematics proficiency levels demonstrating logical composition in requirements.
+version: 0.1.0
+issued-at: 2026-01-26T01:00:00Z
+certificate: null
+
+score-interpretations:
+  # AND — All Required (implicit)
+  arithmetic-1-implicit:
+    name: Arithmetic - Level 1
+    description: Practical experience with addition and subtraction. Prepared to start Arithmetic Level 2
+    requirements:
+      math.addition: competent
+      math.subtraction: competent
+      math.multiplication: aware
+      math.division: aware
+
+  # AND — All Required (explicit)
+  arithmetic-1-explicit:
+    name: Arithmetic - Level 1
+    description: Practical experience with addition and subtraction. Prepared to start Arithmetic Level 2
+    requirements:
+      and: # Explicitly declared
+        math.addition: competent
+        math.subtraction: competent
+        math.multiplication: aware
+        math.division: aware
+
+  # OR — At Least One Required
+  math-fan:
+    name: Math - getting started star
+    description: Students get a star for completing at least 1 lesson.
+    requirements:
+      or:
+        math.addition: familiar
+        math.subtraction: familiar
+
+  # Nested Logic — Combining AND/OR
+  math-tutor-1:
+    name: Math Tutor Level 1
+    description: Qualified to tutor students in arithmetic plus at least one advanced branch.
+    requirements:
+      and:
+        math.addition: competent
+        math.subtraction: competent
+        math.multiplication: competent
+        math.division: competent
+      or:
+        math.trigonometry: competent
+        math.calculus: competent
+
+  # Nested Logic — Suffixed operators
+  math-tutor-2:
+    name: Math Tutor Level 2
+    description: Qualified to tutor multiple students in arithmetic plus at least one advanced branch.
+    requirements:
+      and-math:
+        or-1: # Fundamentals
+          math.addition: competent
+          math.subtraction: competent
+          math.multiplication: competent
+          math.division: competent
+        or-2: # At least one advanced math subject
+          math.trigonometry: competent
+          math.calculus: competent
+      and-pedagogy:
+        pedagogy.curriculum-development: familiar
+        pedagogy.classroom-management: familiar
+
+dependencies:
+  math: https://example.com/topic-lists/0.1.0/math.yml
+  pedagogy: https://example.com/topic-lists/0.1.0/pedagogy.yml

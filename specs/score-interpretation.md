@@ -39,16 +39,59 @@ subtraction --> arithmetic-level-1
 - Badging and micro-credentials
 - Alternative wording for marketing/display purposes
 
-## Requirements
+## Interpretation Requirements
 
 - ID - A unique identifier for tracking
 - Name - A friendly name used for display
 - Description - A short description of the interpretation.
-- Requirements - A set of topics and required scores.
+- Requirements - A collection of logical expressions and topic scores.
+
+## Logical Operations (Optional)
+
+The `requirements` field supports basic inclusive logical expressions.
+
+- If no expression is declared, the default is `all`.
+- Expressions can be nested.
+- Expressions may optionally include a non-numeric unique identifier as a suffix. Examples: `all-abc1`, `any-abc2`, `at-least-3-abc3`
+
+| Operator     | Description                                |
+| ------------ | ------------------------------------------ |
+| `all`        | All expressions must be satisfied          |
+| `any`        | At least one expression must be satisfied  |
+| `at-least-N` | At least `N` expressions must be satisfied |
+
+### Lack of Competency (unsupported)
+
+Interpretations are meant to identify competency, not lack of competency.
+
+As such, exclusive expressions like `not` or `none-of` are deliberately not supported.
+This prevents using interpretations as a blocking mechanism.
+
+### Invalid Syntax
+
+```yaml
+id: arithmetic-1
+name: Arithmetic - Level 1
+description: Practical experience with addition and subtraction, but definitely not capable of multiplication and division
+requirements:
+  all:
+    math.addition: competent
+    math.subtraction: competent
+  not: # Negative competency is not supported
+    math.multiplication: competent
+    math.division: competent
+```
 
 # Examples
 
-### Simple Format
+> [!NOTE]
+> Dependencies are not shown in the below examples, because they are specified in the score interpretation list.
+
+### ALL - Every topic score is required
+
+The user must know how to use both addition and subtraction, and already be aware that multiplication and division exist.
+
+#### Implicit ALL
 
 ```yaml
 id: arithmetic-1
@@ -61,5 +104,108 @@ requirements:
   math.division: aware
 ```
 
-> [!NOTE]
-> Dependencies are not shown in the above example, because they are provided in the score interpretation list.
+#### Explicit ALL
+
+```yaml
+id: arithmetic-1
+name: Arithmetic - Level 1
+description: Practical experience with addition and subtraction. Prepared to start Arithmetic Level 2
+requirements:
+  all: # Explicitly declared
+    math.addition: competent
+    math.subtraction: competent
+    math.multiplication: aware
+    math.division: aware
+```
+
+### ANY — At least one topic score is required
+
+A "getting started badge" awarded when the user has learned at least 1 of the 2 requirements.
+
+```yaml
+id: math-fan
+name: Math - getting started star
+description: Students get a star for completing at least 1 lesson.
+requirements:
+  any:
+    math.addition: familiar
+    math.subtraction: familiar
+```
+
+### AT-LEAST-N — Some of the topic scores are required
+
+The user must satisfy at least 3 of the listed requirements.
+
+```yaml
+id: math-presenter
+name: Math Presenter
+description: Can present math lessons using at least 3 of 4 available classroom surfaces.
+requirements:
+  at-least-3:
+    pedagogy.chalk-board: competent
+    pedagogy.white-board: competent
+    pedagogy.projector: competent
+    pedagogy.touch-screen: competent
+```
+
+### Nested Logic — Combining ALL/ANY
+
+A math tutor qualification where the candidate must be competent in core arithmetic AND must demonstrate ability in 1 advanced area.
+
+```yaml
+id: math-tutor-1
+name: Math Tutor Level 1
+description: Qualified to tutor students in arithmetic plus at least one advanced branch.
+requirements:
+  all:
+    math.addition: competent
+    math.subtraction: competent
+    math.multiplication: competent
+    math.division: competent
+  any:
+    math.trigonometry: competent
+    math.calculus: competent
+```
+
+```yaml
+id: math-tutor-2
+name: Math Tutor Level 2
+description: Qualified to tutor multiple students in arithmetic plus at least one advanced branch.
+requirements:
+  all-math:
+    all-fundamentals: # Fundamental math subjects
+      math.addition: competent
+      math.subtraction: competent
+      math.multiplication: competent
+      math.division: competent
+    any-advanced: # At least one advanced math subject
+      math.trigonometry: competent
+      math.calculus: competent
+  all-pedagogy:
+    pedagogy.curriculum-development: familiar
+    pedagogy.classroom-management: familiar
+```
+
+<details>
+<summary>💡 Tip: This can be simplified with implicit ALL</summary>
+
+```yaml
+id: math-tutor-2
+name: Math Tutor Level 2
+description: Qualified to tutor multiple students in arithmetic plus at least one advanced branch.
+requirements:
+  # Math requirements
+  all-fundamentals: # Fundamental math subjects
+    math.addition: competent
+    math.subtraction: competent
+    math.multiplication: competent
+    math.division: competent
+  any-advanced: # At least one advanced math subject
+    math.trigonometry: competent
+    math.calculus: competent
+  # Pedagogy requirements
+  pedagogy.curriculum-development: familiar
+  pedagogy.classroom-management: familiar
+```
+
+</details>

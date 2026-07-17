@@ -17,6 +17,13 @@ The following content must be included in each transcript entry.
 
 ## Extended Content
 
+### Topic List Source
+
+An issuer may append a list of URLs to help a receiver locate a copy of the topic list. It is recommended to position the original in the first position.
+
+- **Type**: List of URL strings to locations where the topic list is hosted.
+- **Validation**: Modifiying this field does not invalidate the signature.
+
 ### Verification URL
 
 An issuer may append an additional URL to enable additional verification that the certificate is still endorsed.
@@ -37,7 +44,7 @@ All transcript entries are individually signed by the issuer to enable verificat
 
 ## Distributable
 
-All transcript entries are stored individually to enable selective sharing with desired parties.
+All transcript entries are stored individually using a flat structure to enable easy and selective sharing with desired parties. 
 
 - Enables proficiency progress across multiple sources.
 - Enables storage of scores across multiple services.
@@ -66,18 +73,44 @@ There are many situations where this may occur, for example:
 
 > Receivers are highly encouraged to check validity status if the `verification-url` is provided.
 
-# Example
+# Examples
+
+### Required content
 
 ```yml
 # yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json
 
 user-email: first.last@example.com
 topic: addition
-topic-list: https://example.com/topic-lists/0.1.0/math.yml
+topic-list: math
+topic-list-version: 0.1.0
+topic-list-owner: example.com
 score: competent
 issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z
-verification-url: https://example.com/verify-scores
+issued-by: example.com
+certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+```
+
+### Extended content
+
+The below includes the optional `topic-list-sources` and `verification-url` fields.
+
+```yml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/openproficiency/model/refs/heads/main/schemas/transcript-entry.schema.json
+
+user-email: first.last@example.com
+topic: addition
+topic-list: math
+topic-list-version: 0.1.0
+topic-list-owner: example.com
+topic-list-sources: # Optional
+  - https://example.com/topic-lists/math/0.1.0
+  - https://raw.githubusercontent.com/my-org/topics/refs/heads/main/math.yml
+score: competent
+issued-at: 2026-01-01T01:01:01Z
+valid-until: 2028-01-01T01:01:01Z
+verification-url: https://example.com/verify-scores # Optional
 issued-by: example.com
 certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 ```

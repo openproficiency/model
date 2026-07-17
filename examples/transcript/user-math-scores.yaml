@@ -2,7 +2,9 @@
 
 - user-email: first.last@example.com
   topic: addition
-  topic-list: https://example.com/topic-lists/0.1.0/math.yml
+  topic-list: math
+  topic-list-version: 0.1.0
+  topic-list-owner: example.com
   score: competent
   issued-at: 2026-01-01T01:01:01Z
   valid-until: 2028-01-01T01:01:01Z
@@ -11,7 +13,9 @@
 
 - user-email: first.last@example.com
   topic: subtraction
-  topic-list: https://example.com/topic-lists/0.1.0/math.yml
+  topic-list: math
+  topic-list-version: 0.1.0
+  topic-list-owner: example.com
   score: competent
   issued-at: 2026-01-01T01:01:01Z
   valid-until: 2028-01-01T01:01:01Z

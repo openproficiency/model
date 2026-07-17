@@ -26,9 +26,33 @@
     },
 
     "topic-list": {
-      "description": "HTTP(S) URL to the versioned topic list (YAML/JSON)",
+      "description": "Name of the topic list that defines the topic. Kebab case. Ex: 'math'",
       "type": "string",
-      "format": "uri"
+      "format": "kebab-case",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+
+    "topic-list-version": {
+      "description": "Version of the topic list. Semantic versioning format. Ex: '1.0.0'",
+      "type": "string",
+      "format": "semver",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+
+    "topic-list-owner": {
+      "description": "Domain name of the entity that maintains the topic list. Ex: 'example.com'",
+      "type": "string",
+      "format": "hostname",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}$"
+    },
+
+    "topic-list-sources": {
+      "description": "Optional list of URLs where the topic list is hosted. The issuer's original is recommended first.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
     },
 
     "score": {
@@ -81,6 +105,8 @@
     "user-email",
     "topic",
     "topic-list",
+    "topic-list-version",
+    "topic-list-owner",
     "score",
     "issued-at",
     "valid-until",

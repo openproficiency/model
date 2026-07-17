@@ -26,10 +26,9 @@ An issuer may append a list of URLs to help a receiver locate a copy of the topi
 
 ### Verification URL
 
-An issuer may append an additional URL to enable additional verification that the certificate is still endorsed.
+An issuer may append a URL that enables receivers to verify that the score is still endorsed.
 
 - **Type**: URL string pointing to the issuer's verification API.
-- **Purpose**: Tells receivers where to query verification status for entries from this issuer.
 - **Privacy**: The API only accepts an entry's certificate's hash as input and return only a verification status. No user-identifiable data is transmitted.
 
 For more details, see [Transcript Entry Verification](transcript-entry-verification.md).

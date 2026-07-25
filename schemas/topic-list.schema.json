@@ -75,9 +75,48 @@
       "type": "object",
       "patternProperties": {
         "^[a-z0-9]+(?:-[a-z0-9]+)*$": {
-          "type": "string",
-          "description": "HTTP(S) URL to a versioned topic list (YAML/JSON)",
-          "format": "uri"
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "Shorthand reference: a fully qualified name 'owner/name@version' (e.g. 'example.com/math@0.1.0') for registry lookup.",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}/[a-z0-9]+(?:-[a-z0-9]+)*@(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+            },
+            {
+              "type": "object",
+              "description": "Long-form reference using explicit fields. Optionally provides exact locations, removing dependency on any registry.",
+              "properties": {
+                "topic-list-owner": {
+                  "description": "The owner of the referenced topic list. Domain name. Ex: 'example.com'",
+                  "type": "string",
+                  "format": "hostname",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.[a-z]{2,}$"
+                },
+                "topic-list-name": {
+                  "description": "The name of the referenced topic list. Kebab case. Ex: 'math'",
+                  "type": "string",
+                  "format": "kebab-case",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "topic-list-version": {
+                  "description": "The version of the referenced topic list. Semantic versioning format. Ex: '0.1.0'",
+                  "type": "string",
+                  "format": "semver",
+                  "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+                },
+                "locations": {
+                  "description": "Optional list of exact HTTP(S) URLs where this topic list version can be retrieved. Removes dependency on any registry. Not included in the issuer's certificate verification, so it may be amended by redistributors without invalidating the signature.",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": ["topic-list-owner", "topic-list-name", "topic-list-version"],
+              "additionalProperties": false
+            }
+          ]
         }
       },
       "additionalProperties": false

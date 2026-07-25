@@ -13,7 +13,7 @@ The following content must be included in the list.
 - Issued At - The time when the list was created and assigned a version number.
 - Certificate - Verification from the issuer that the list is unmodified.
 - Topics - A dictionary of [Topic](topic.md) objects.
-- Dependencies - A list of URIs to required topic lists.
+- Dependencies - A dictionary of aliases to required topic lists (shorthand or long form).
 
 ## Topic Identifiers
 
@@ -33,13 +33,16 @@ The topic list is signed by the issuer with each release of a version to enable 
 - Prevents tampering of [transcript records](transcript-entry.md).
 - Prevents record loss if an **issuer** is no longer available.
 
+> [!NOTE]
+> Dependency [`locations`](#dependency-locations) are excluded from the signature, since they are mutable redistribution pointers rather than part of the list's identity.
+
 ## Distributable
 
 A topic list originates from the issuer.
 
 - It is served **publicly** with minimal restriction.
 - It may be redistributed by other parties.
-- It may be served from any URL, provided it uniquely indicates the list, version, and format.
+- It may be served from any URL.
   - Example: https://example.com/topic-lists/0.1.0/math.yml
   - Example: https://example.com/math.json?v=0.1.0
   - Example: https://example.com?list=math&v=0.1.0&f=json
@@ -57,7 +60,6 @@ This enables:
 A list may import topics from another list by declaring it as a dependency.
 
 - Imported topics may only be used as pretopics.
-- The dependency source is provided as a full URL, including some indicator for version. Example `https://example.com/0.1.0/math.yml`
 - Dependencies are assigned a local namespace and referenced using `.` notation.
 - All direct and imported topics may be assigned scores.
 
@@ -79,6 +81,44 @@ flowchart BT
     std-math@{ shape: docs, label: "std-math<br/>example.com/0.1.0/math.yml" }
   end
 ```
+
+### Dependency locations
+
+Since topic lists are distributable, they must be specified using their fully qualified name and version. Urls to possible locations are optional.
+
+A dependency can be declared in one of two forms:
+
+**Shorthand** — a single string with the fully qualified name (`owner/name@version`) resolved via a registry.
+
+```yaml
+dependencies:
+  std-math: example.com/math@0.1.0
+```
+
+**Long form** — explicit fields for the owner, name, and version. This form may optionally include a `locations` list of exact URLs, removing dependency on any registry.
+
+```yaml
+dependencies:
+  std-math:
+    topic-list-owner: example.com
+    topic-list-name: math
+    topic-list-version: 0.1.0
+```
+
+```yaml
+dependencies:
+  std-math:
+    topic-list-owner: example.com
+    topic-list-name: math
+    topic-list-version: 0.1.0
+    locations:
+      - https://example.com/0.1.0/math.yml
+```
+
+> [!IMPORTANT]
+> The `locations` field is **not** included in the issuer's [certificate](#signed) verification.
+> Because a list is redistributable, its locations may be amended or extended by any party without invalidating the signature.
+> A dependency's identity and integrity are established by its fully qualified name and version, not by where it is hosted.
 
 ## List Evolution
 
@@ -183,5 +223,5 @@ topics:
       - binary-division
 
 dependencies:
-  std-math: https://example.com/0.1.0/math.yml
+  std-math: example.com/math@0.1.0
 ```

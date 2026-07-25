@@ -9,6 +9,7 @@ certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 topics:
   binary-addition:
+    display-name: Binary Addition
     description: Combining of 2 or more numbers.
     pretopics:
       - std-math.addition

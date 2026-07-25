@@ -59,6 +59,17 @@ pretopic -.-x topic2
 
 The following are additional fields that are often provided alongside a topic to provide guidance in common situations.
 
+### Display Name
+
+A topic identifier is kebab-case and optimized for uniqueness and referencing, not for reading.
+
+As such, each topic may provide an optional human friendly display name as recommendation.
+
+```yaml
+single-variable-equations:
+  display-name: Single Variable Equations
+```
+
 ### Description
 
 A single name is unlikely to explain the knowledge space covered by that topic.

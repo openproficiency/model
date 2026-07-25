@@ -9,6 +9,7 @@ certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
 
 topics:
   numbers:
+    display-name: Numbers
     description: Understanding integers, rational numbers, real numbers, and their properties.
     validity-period: 3360
 

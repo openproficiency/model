@@ -19,6 +19,12 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
 
+    "display-name": {
+      "description": "Optional human-friendly name for this topic.",
+      "type": "string",
+      "maxLength": 100
+    },
+
     "description": {
       "description": "A brief explanation of the knowledge represented by this topic. Max 100 characters.",
       "type": "string",

@@ -11,7 +11,8 @@ The following content must be included in the list.
 - Version - Any indicator to unique identify the version of the list.
 - Issuer - The owner of this topic list.
 - Issued At - The time when the list was created and assigned a version number.
-- Certificate - Verification from the issuer that the list is unmodified.
+- Signature - A GPG signature from the issuer verifying the list is unmodified.
+- Signed By - the email address of the signing GPG key, for convenience. Only trust the email in the signature.
 - Topics - A dictionary of [Topic](topic.md) objects.
 - Dependencies - A dictionary of aliases to required topic lists (shorthand or long form).
 
@@ -116,7 +117,7 @@ dependencies:
 ```
 
 > [!IMPORTANT]
-> The `locations` field is **not** included in the issuer's [certificate](#signed) verification.
+> The `locations` field is **not** included in the issuer's [signature](#signed) verification.
 > Because a list is redistributable, its locations may be amended or extended by any party without invalidating the signature.
 > A dependency's identity and integrity are established by its fully qualified name and version, not by where it is hosted.
 
@@ -191,7 +192,8 @@ name: binary-math
 description: Mathematics in binary for electrical circuits.
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 topics:
   binary-addition:

@@ -13,7 +13,8 @@ The following content must be included in each transcript entry.
 - Issued At
 - Valid Until
 - Issued By (domain name)
-- Certificate
+- Signature (GPG)
+- Signed By (email; domain must match Issued By)
 
 ## Extended Content
 
@@ -29,7 +30,7 @@ An issuer may append a list of URLs to help a receiver locate a copy of the topi
 An issuer may append a URL that enables receivers to verify that the score is still endorsed.
 
 - **Type**: URL string pointing to the issuer's verification API.
-- **Privacy**: The API only accepts an entry's certificate's hash as input and return only a verification status. No user-identifiable data is transmitted.
+- **Privacy**: The API only accepts an entry's signature hash as input and return only a verification status. No user-identifiable data is transmitted.
 
 For more details, see [Transcript Entry Verification](transcript-entry-verification.md).
 
@@ -88,7 +89,8 @@ score: competent
 issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z
 issued-by: example.com
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 ```
 
 ### Extended content
@@ -111,5 +113,6 @@ issued-at: 2026-01-01T01:01:01Z
 valid-until: 2028-01-01T01:01:01Z
 verification-url: https://example.com/verify-scores # Optional
 issued-by: example.com
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 ```

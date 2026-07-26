@@ -9,7 +9,8 @@ A **Score Interpretation List** is a collection of [score interpretations](score
 - Version - Any indicator to unique identify the version of the list.
 - Issuer - The owner of this topic list.
 - Issued At - The time when the list was created and assigned a version number.
-- Certificate - Verification from the issuer that the list is unmodified.
+- Signature - A GPG signature from the issuer verifying the list is unmodified.
+- Signed By - the email address of the signing GPG key, for convenience. Only trust the email in the signature.
 - Score Interpretations - A dictionary of [score interpretation](score-interpration.md) objects.
 - Dependencies - A list of URIs to required topic lists.
 
@@ -79,7 +80,8 @@ name: math-levels
 description: Mathematics Proficiency Levels
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 score-interpretations:
   arithmetic-1:
@@ -159,7 +161,8 @@ name: math-levels
 description: Mathematics Proficiency Levels
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 score-interpretations:
   arithmetic-1:
@@ -246,7 +249,8 @@ name: math-teacher-levels
 description: Internal definition of math teacher proficiency.
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 score-interpretations:
   math-teacher-junior:
@@ -321,7 +325,8 @@ name: math-badges
 description: Mathematics badges themed metals.
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 score-interpretations:
   1-bronze:
@@ -395,7 +400,8 @@ name: math-badges-magic
 description: Mathematics badges themed in the world of magic and spells.
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 score-interpretations:
   1-acolyte:
@@ -468,7 +474,8 @@ name: math-pathways
 description: Mathematics proficiency levels with logical composition.
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: null
+signature: null
+signed-by: null
 
 score-interpretations:
   math-tutor-1:

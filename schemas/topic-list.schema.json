@@ -45,13 +45,25 @@
       "format": "date-time"
     },
 
-    "certificate": {
-      "description": "x.509 certificate in PEM format with embedded Ed25519 signature used to verify authenticity of this topic list.",
-      "format": "pem-certificate",
+    "signature": {
+      "description": "ASCII-armored detached OpenPGP (GPG) signature over the protected fields of this topic list, used to verify authenticity.",
       "oneOf": [
         {
           "type": "string",
-          "pattern": "^-----BEGIN CERTIFICATE-----\\r?\\n(?:[A-Za-z0-9+/]{64}\\r?\\n)+(?:[A-Za-z0-9+/]{1,64}=*\\r?\\n)-----END CERTIFICATE-----\\r?\\n?$"
+          "pattern": "^-----BEGIN PGP SIGNATURE-----\\r?\\n(?:[^\\n]+\\r?\\n)*\\r?\\n(?:[A-Za-z0-9+/]+=*\\r?\\n)+=[A-Za-z0-9+/]{4}\\r?\\n-----END PGP SIGNATURE-----\\r?\\n?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+
+    "signed-by": {
+      "description": "Email address of the GPG key that produced 'signature'. For convenience only. Verify with signature. Convention: 'proficiency@<owner>'.",
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "email"
         },
         {
           "type": "null"
@@ -104,7 +116,7 @@
                   "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
                 },
                 "locations": {
-                  "description": "Optional list of exact HTTP(S) URLs where this topic list version can be retrieved. Removes dependency on any registry. Not included in the issuer's certificate verification, so it may be amended by redistributors without invalidating the signature.",
+                  "description": "Optional list of exact HTTP(S) URLs where this topic list version can be retrieved. Removes dependency on any registry. Not included in the issuer's signature verification, so it may be amended by redistributors without invalidating the signature.",
                   "type": "array",
                   "items": {
                     "type": "string",
@@ -123,6 +135,6 @@
     }
   },
 
-  "required": ["owner", "name", "description", "version", "issued-at", "certificate", "topics"],
+  "required": ["owner", "name", "description", "version", "issued-at", "signature", "signed-by", "topics"],
   "additionalProperties": false
 }

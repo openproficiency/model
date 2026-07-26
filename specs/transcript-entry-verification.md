@@ -18,7 +18,7 @@ Type: `POST`
 
 Content-Type: `application/json`
 
-Body: an array of one or more certificate hashes
+Body: an array of one or more signature hashes
 
 <!-- prettier-ignore -->
 ```json
@@ -31,9 +31,9 @@ Body: an array of one or more certificate hashes
 
 ## API Response
 
-A JSON object mapping each submitted certificate hash to its verification status.
+A JSON object mapping each submitted signature hash to its verification status.
 
-- One key per certificate hash submitted in the request.
+- One key per signature hash submitted in the request.
 - Unknown hashes return `valid: false`.
 
 ```json
@@ -65,5 +65,5 @@ Allowed values:
 
 - Endpoint is served over HTTPS.
 - Endpoint does not require authentication.
-- API only accepts certificate hash identifiers for lookup.
+- API only accepts signature hash identifiers for lookup.
 - API does not accept or return user-identifiable information.

@@ -5,7 +5,8 @@ name: math
 description: Standard Mathematics
 version: 0.1.0
 issued-at: 2026-01-26T01:00:00Z
-certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+signed-by: proficiency@example.com
 
 topics:
   numbers:

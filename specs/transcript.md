@@ -26,7 +26,8 @@ A **transcript** is a collection of [transcript entries](transcript-entry.md). I
   issued-at: 2026-01-01T01:01:01Z
   valid-until: 2028-01-01T01:01:01Z
   issued-by: example.com
-  certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+  signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+  signed-by: proficiency@example.com
 
 - user-email: first.last@example.com
   topic: subtraction
@@ -35,5 +36,6 @@ A **transcript** is a collection of [transcript entries](transcript-entry.md). I
   issued-at: 2026-01-01T01:01:01Z
   valid-until: 2028-01-01T01:01:01Z
   issued-by: example.com
-  certificate: -----BEGIN CERTIFICATE-----ABC123DEF456-----END CERTIFICATE-----
+  signature: -----BEGIN PGP SIGNATURE-----ABC123DEF456-----END PGP SIGNATURE-----
+  signed-by: proficiency@example.com
 ```

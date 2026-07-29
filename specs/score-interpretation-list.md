@@ -26,13 +26,33 @@ If distributed, the list is signed by the issuer with each release of a version 
 Unlike [topic lists](topic-list.md), an interpretation list only needs to be distributed to required consumers.
 
 - Enables both standard public definitions and private internal-only definitions.
-- It is served to the audience with minimal restriction.
+- It may be redistributed by other parties.
+- It may be served from any URL.
+  - Example: https://example.com/interpretations/0.1.0/math-levels.yml
+  - Example: https://example.com/math-levels.json?v=0.1.0
+- It may be bundled and shared through an [npm package](npm-distribution.md).
 
 This enables:
 
-- Shared interpretation by multiple parties
+- Shared interpretation by multiple parties.
 - Discourages conflicting definitions.
 - Combining different interpretations.
+
+## Dependencies
+
+An interpretation list references the [topic lists](topic-list.md) whose scores it interprets. Each
+dependency is declared using the same [options as a topic list](topic-list.md#dependency-locations).
+
+```yaml
+dependencies:
+  math:
+    topic-list-owner: example.com
+    topic-list-name: math
+    topic-list-version: 0.1.0
+    locations:
+      - https://example.com/0.1.0/math.yml
+      - npm:@example/math-topics@0.1.0
+```
 
 ## Examples
 
@@ -106,7 +126,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.yml
+  math: example.com/math@0.1.0
 ```
 
 Information
@@ -193,7 +213,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.yml
+  math: example.com/math@0.1.0
 ```
 
 </details>
@@ -275,8 +295,8 @@ score-interpretations:
       std-pedagogy.curriculum-development: comptent
 
 dependencies:
-  std-math: https://example.com/topics-lists/0.1.0/math.yml
-  std-pedagogy: https://example.com/topics-lists/0.1.0/pedagogy.yml
+  std-math: example.com/math@0.1.0
+  std-pedagogy: example.com/pedagogy@0.1.0
 ```
 
 </details>
@@ -351,7 +371,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.yml
+  math: example.com/math@0.1.0
 ```
 
 </details>
@@ -426,7 +446,7 @@ score-interpretations:
       math.roots: competent
 
 dependencies:
-  math: https://example.com/0.1.0/math.yml
+  math: example.com/math@0.1.0
 ```
 
 </details>
@@ -492,7 +512,7 @@ score-interpretations:
         math.calculus: competent
 
 dependencies:
-  math: https://example.com/topic-lists/0.1.0/math.yml
+  math: example.com/math@0.1.0
 ```
 
 </details>

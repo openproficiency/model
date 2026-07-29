@@ -96,7 +96,7 @@ dependencies:
   std-math: example.com/math@0.1.0
 ```
 
-**Long form** — explicit fields for the owner, name, and version. This form may optionally include a `locations` list of exact URLs, removing dependency on any registry.
+**Long form** — explicit fields for the owner, name, and version. This form may optionally include a `locations` list of exact URLs or [npm packages](npm-distribution.md).
 
 ```yaml
 dependencies:
@@ -114,6 +114,7 @@ dependencies:
     topic-list-version: 0.1.0
     locations:
       - https://example.com/0.1.0/math.yml
+      - npm:@example/math-topics@0.1.0
 ```
 
 > [!IMPORTANT]

@@ -29,6 +29,24 @@ Definitions to interpret proficiency:
 - **Distributed** - All transcript records are independent of the issuer and learning source.
 - **Never Repeat** - Knowledge topics and proficiency are transferrable. New courses on the same topics don't invalidate old courses.
 
+## Get started
+
+Install the versioned JSON schema package:
+
+```bash
+npm install @openproficiency/schema
+```
+
+```js
+import topicSchema from "@openproficiency/schema/topic.schema.json";
+import topicListSchema from "@openproficiency/schema/topic-list.schema.json";
+import scoreInterpretationSchema from "@openproficiency/schema/score-interpretation.schema.json";
+import scoreInterpretationListSchema from "@openproficiency/schema/score-interpretation-list.schema.json";
+import transcriptEntrySchema from "@openproficiency/schema/transcript-entry.schema.json";
+import transcriptEntryVerificationSchema from "@openproficiency/schema/transcript-entry-verification.schema.json";
+import transcriptSchema from "@openproficiency/schema/transcript.schema.json";
+```
+
 ## Works With Open Proficiency
 
 The **Works With Open Profiency** badge helps indicate to users of your platform, that their (new) proficiencies will be easy to manage, distribute, and validate across ecosystems.

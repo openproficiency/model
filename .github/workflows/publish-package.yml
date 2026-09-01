@@ -74,6 +74,7 @@ jobs:
       - name: Create GitHub release
         run: >
           gh release create "v${PACKAGE_VERSION}" ./package/*.tgz
+          --repo "${GITHUB_REPOSITORY}"
           --generate-notes
           --target "${GITHUB_SHA}"
           --title "v${PACKAGE_VERSION}"

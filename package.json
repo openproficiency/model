@@ -1,0 +1,31 @@
+{
+  "name": "@openproficiency/schema",
+  "version": "0.1.0",
+  "description": "JSON schemas for the Open Proficiency Model.",
+  "license": "Apache-2.0",
+  "files": [
+    "schemas"
+  ],
+  "exports": {
+    "./*.schema.json": "./schemas/*.schema.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openproficiency/model.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openproficiency/model/issues"
+  },
+  "homepage": "https://github.com/openproficiency/model#readme",
+  "scripts": {
+    "test": "node --test tests/**/*.test.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.9.0"
+  }
+}
